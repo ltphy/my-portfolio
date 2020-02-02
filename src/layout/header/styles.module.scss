@@ -1,0 +1,43 @@
+.nav_wrapper {
+  background-color: #355c7D !important;
+  justify-content: center !important;
+}
+
+.brandWrapper {
+  justify-content: center !important;
+  display: flex;
+  @media (max-width: 991px) {
+    justify-content: flex-start !important;
+  }
+  .brand {
+    font-size: x-large !important;
+    font-family: "Tahoma";
+    font-weight: bold;
+    color: white !important;
+    text-transform: uppercase;
+  }
+
+}
+
+.toggle {
+  justify-content: flex-end;
+  align-items: flex-end;
+  display: flex;
+}
+
+.nav_container {
+  justify-content: center !important;
+  display: flex;
+  @media (max-width: 991px) {
+    justify-content: flex-start !important;
+  }
+
+  .route {
+    font-size: medium !important;
+    color: white !important;
+    font-family: "Tahoma";
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
