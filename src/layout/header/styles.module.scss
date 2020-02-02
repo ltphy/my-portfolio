@@ -9,20 +9,25 @@
   @media (max-width: 991px) {
     justify-content: flex-start !important;
   }
+
   .brand {
     font-size: x-large !important;
     font-family: "Tahoma";
     font-weight: bold;
     color: white !important;
     text-transform: uppercase;
+
   }
 
 }
 
 .toggle {
-  justify-content: flex-end;
-  align-items: flex-end;
-  display: flex;
+  font-size: smaller !important;
+  text-transform: uppercase;
+  padding: 10px !important;
+  font-weight: bold;
+  color: white !important;
+  border-color: white !important;
 }
 
 .nav_container {

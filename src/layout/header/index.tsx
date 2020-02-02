@@ -2,7 +2,8 @@ import React from 'react';
 import {Navbar, Nav, Row, Col} from 'react-bootstrap';
 import {routes, IRouter} from "../../constants/routes.constant";
 import styles from "./styles.module.scss"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
     return (
         <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper}>
@@ -12,8 +13,8 @@ const Header = () => {
                 </Navbar.Brand>
             </Col>
             {/*To create a toggle button for nav bar*/}
-            <Navbar.Toggle aria-controls="responsive-navbar-nav">
-                Menu
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" className = {styles.toggle}>
+                Menu <FontAwesomeIcon icon={faBars}/>
             </Navbar.Toggle>
             <Navbar.Collapse id={"responsive-navbar-nav"} className={styles.nav_container}>
                 <Nav>
