@@ -1,5 +1,5 @@
 import Home from "../pages/home";
-
+import Stories from "../pages/contents/stories";
 export interface IRouter {
     component: any;
     isPrivate: boolean,
@@ -12,14 +12,14 @@ export const routes: IRouter[] = [
     {
         component: Home,
         isPrivate: false,
-        title: "Stories",
+        title: "Home",
         showHeaderNavBar: true,
         path: "/",
     },
     {
-        component: Home,
+        component: Stories,
         isPrivate: false,
-        title: "Contact",
+        title: "Stories",
         showHeaderNavBar: true,
         path: "/",
     },

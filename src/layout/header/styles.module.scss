@@ -1,6 +1,9 @@
 .nav_wrapper {
   background-color: #355c7D !important;
   justify-content: center !important;
+  font-family: Tahoma;
+  padding: 90px 10px;
+  transition: 0.4s;
 }
 
 .brandWrapper {
@@ -9,20 +12,24 @@
   @media (max-width: 991px) {
     justify-content: flex-start !important;
   }
+
   .brand {
     font-size: x-large !important;
-    font-family: "Tahoma";
     font-weight: bold;
     color: white !important;
     text-transform: uppercase;
+
   }
 
 }
 
 .toggle {
-  justify-content: flex-end;
-  align-items: flex-end;
-  display: flex;
+  font-size: smaller !important;
+  text-transform: uppercase;
+  padding: 12px !important;
+  font-weight: bold;
+  color: white !important;
+  border-color: white !important;
 }
 
 .nav_container {
@@ -35,9 +42,12 @@
   .route {
     font-size: medium !important;
     color: white !important;
-    font-family: "Tahoma";
     text-transform: uppercase;
     font-weight: bold;
+    padding: 2rem;
+  }
+
+  .route:hover {
+    color: lightblue !important;
   }
 }
-
