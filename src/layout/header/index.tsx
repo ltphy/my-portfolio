@@ -6,7 +6,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {homeRouters, IHomeRouter} from "../../constants/home_routes.constants";
 
-const Header = () => {
+interface HeaderProps {
+    changeNavTab: (hashNavValue: string) => void;
+}
+
+const Header = (headerProps: HeaderProps) => {
     //this header is not used to move to other route but instead to move to certain href element
     return (
         <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper}>
@@ -26,8 +30,11 @@ const Header = () => {
                             homeRouters.map((route: IHomeRouter, index: number) => {
                                 return (
                                     route.showHeaderNavBar &&
-                                    <Nav.Link className={styles.route} href={route.path} key={route.title}>
+                                    <Nav.Link className={styles.route} key={route.title} onClick={() => {
+                                        headerProps.changeNavTab(route.title);
+                                    }}>
                                         {route.title}
+
                                     </Nav.Link>
                                 );
                             })
