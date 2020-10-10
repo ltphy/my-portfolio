@@ -4,8 +4,10 @@ import {routes, IRouter} from "../../constants/routes.constant";
 import styles from "./styles.module.scss"
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {homeRouters, IHomeRouter} from "../../constants/home_routes.constants";
 
 const Header = () => {
+    //this header is not used to move to other route but instead to move to certain href element
     return (
         <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper}>
             <Container fluid>
@@ -21,9 +23,10 @@ const Header = () => {
                 <Navbar.Collapse id={"responsive-navbar-nav"} className={styles.nav_container}>
                     <Nav>
                         {
-                            routes.map((route: IRouter, index: number) => {
+                            homeRouters.map((route: IHomeRouter, index: number) => {
                                 return (
-                                    route.showHeaderNavBar && <Nav.Link className={styles.route}>
+                                    route.showHeaderNavBar &&
+                                    <Nav.Link className={styles.route} href={route.path} key={route.title}>
                                         {route.title}
                                     </Nav.Link>
                                 );
@@ -35,5 +38,5 @@ const Header = () => {
             </Container>
         </Navbar>
     );
-}
+};
 export default Header;
