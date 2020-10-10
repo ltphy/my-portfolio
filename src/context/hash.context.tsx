@@ -1,10 +1,15 @@
 import React, {useContext, useRef} from 'react';
 
-export const HashContext: React.Context<string> = React.createContext<string>("");
+export interface HashValue {
+    hashName: string;
+}
+
+const defaultHashValue: HashValue = {hashName: ""};
+export const HashContext: React.Context<HashValue> = React.createContext<HashValue>(defaultHashValue);
 
 interface hashContextProps {
     children: any;
-    hashValue: string;
+    hashValue: HashValue;
 }
 
 export const HashContextProvider = (props: hashContextProps) => {
@@ -16,5 +21,5 @@ export const HashContextProvider = (props: hashContextProps) => {
 };
 
 export const useHashRoute = () => {
-    return useContext<string>(HashContext);
+    return useContext<HashValue>(HashContext);
 };
