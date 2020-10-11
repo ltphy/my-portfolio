@@ -11,17 +11,18 @@ export interface IHomeRouter {
 }
 export const homeRouters: IHomeRouter[] = [
     {
-        component: About,
-        title: "About",
-        showHeaderNavBar: true,
-        path: "#About",
-    },
-    {
         component: Stories,
         title: "Stories",
         showHeaderNavBar: true,
         path: "#Stories",
     },
+    {
+        component: About,
+        title: "About",
+        showHeaderNavBar: true,
+        path: "#About",
+    },
+
     {
         component: Contact,
         title: "Contact",

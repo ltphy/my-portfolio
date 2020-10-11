@@ -16,7 +16,6 @@ const Home = (homeProps: HomeProps) => {
     //because the same object so It wont be any different
     useEffect(() => {
         if (hashValue && hashValue.hashName) {
-            // const newHashRoute = homeProps.location.hash.replace("#", "");
             const myRef = hashRoutes.current[hashValue.hashName];
             setTimeout(() => {
                 myRef.scrollIntoView({behavior: 'smooth', inline: "start", block: "start"})
