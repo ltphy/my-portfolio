@@ -5,9 +5,10 @@ export interface HashValue {
 }
 
 const defaultHashValue: HashValue = {hashName: ""};
-export const HashContext: React.Context<HashValue> = React.createContext<HashValue>(defaultHashValue);
+const HashContext: React.Context<HashValue> = React.createContext<HashValue>(defaultHashValue);
 
-interface hashContextProps {
+interface hashContextProps
+{
     children: any;
     hashValue: HashValue;
 }

@@ -1,9 +1,14 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import rsz_phy2 from '../../../resources/rsz_phy2.jpg'
+import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 const Contact = () => {
+    const useTheme = useThemeContext();
 
-    return (<div className={styles.content_wrapper}>
+    const myStyleComponent = {
+        "backgroundColor": "#efefef",
+    };
+    return (<div className={styles.content_wrapper} style={useTheme.content}>
         Contact me 0901448926
         <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.

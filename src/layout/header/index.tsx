@@ -6,18 +6,22 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {homeRouters, IHomeRouter} from "../../constants/home_routes.constants";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
-import {ThemeMode} from "../../constants/theme_mode";
+import {darkTheme, lightTheme} from "../../constants/theme_mode";
 import Switch from '@material-ui/core/Switch';
+import {useThemeContext} from "../../context/ThemeProvider/theme.context";
 
 interface HeaderProps {
     changeNavTab: (hashNavValue: string) => void;
+    switchTheme: (theme: boolean) => void;
 }
 
 const Header = (headerProps: HeaderProps) => {
     const [themeMode, setThemeMode] = useState<boolean>();
+    const useTheme = useThemeContext();
     const switchThemeMode = (event: React.ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.checked);
         setThemeMode(event.target.checked);
+        headerProps.switchTheme(event.target.checked);
     };
     const SwitchMode = () => {
         return (<Switch checked={themeMode} onChange={switchThemeMode} color={"secondary"}/>);
@@ -25,11 +29,11 @@ const Header = (headerProps: HeaderProps) => {
 
     //this header is not used to move to other route but instead to move to certain href element
     return (
-        <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper}>
+        <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper} style={useTheme.navBar}>
             <Container fluid>
                 <Col className={styles.brandWrapper}>
-                    <Navbar.Brand className={styles.brand}>
-                        Home
+                    <Navbar.Brand className={styles.brand} style={{"color": useTheme.navBar.color}}>
+                        Phy Lieng
                     </Navbar.Brand>
                 </Col>
                 {/*To create a toggle button for nav bar*/}
@@ -42,7 +46,7 @@ const Header = (headerProps: HeaderProps) => {
                             homeRouters.map((route: IHomeRouter, index: number) => {
                                 return (
                                     route.showHeaderNavBar &&
-                                    (<Nav.Link className={styles.route} key={route.title} onClick={() => {
+                                    (<Nav.Link className={styles.route} style={{"color": useTheme.navBar.color}} key={route.title} onClick={() => {
                                         headerProps.changeNavTab(route.title);
                                     }}>
                                         {route.title}

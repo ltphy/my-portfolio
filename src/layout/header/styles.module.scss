@@ -1,6 +1,6 @@
 .nav_wrapper {
-  background-color: white !important;
-  justify-content: center !important;
+  background-color: white ;
+  justify-content: center;
   font-family: Tahoma !important;
   padding: 90px 10px;
   transition: 0.4s;
@@ -17,7 +17,7 @@
   .brand {
     font-size: x-large !important;
     font-weight: bold;
-    color: #373a40 !important;
+    //color: #373a40 !important;
     text-transform: uppercase;
 
   }
@@ -43,7 +43,7 @@
 
   .route {
     font-size: medium !important;
-    color: black !important;
+    //color: black !important;
     text-transform: uppercase;
     font-weight: bold;
     padding: 2rem;

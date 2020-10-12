@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./styles.module.scss";
+import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 const About = () => {
-
-    return (<div className={styles.content_wrapper}>
+    const useTheme = useThemeContext();
+    return (<div className={styles.content_wrapper} style={useTheme.content}>
         Contact me 0901448926
         <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
