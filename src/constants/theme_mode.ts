@@ -9,7 +9,13 @@ export interface Theme {
         color: string;
         transition: string;
     }
-
+    toggleButton: {
+        gradient: string;
+        toggleBorder: string;
+        switchColor: string;
+        transformDark: string;
+        transformLight: string;
+    }
 
 }
 
@@ -23,11 +29,19 @@ export const lightTheme = {
         backgroundColor: "#fff",
         color: "#000",
         transition: "all 0.25s linear",
+    },
+    toggleButton: {
+        toggleBorder: "black",
+        // gradient: 'linear-gradient(#39598A, #79D7ED)',
+        gradient: "#fff",
+        switchColor: "#000",
+        transformLight: "translateY(0)",
+        transformDark: "translateY(-100px)"
     }
 };
 
 export const darkTheme = {
-    content:{
+    content: {
         backgroundColor: "#18191a",
         color: "#b0b3b8",
         transition: "all 0.25s linear",
@@ -36,6 +50,14 @@ export const darkTheme = {
         backgroundColor: "#242526",
         color: "#b0b3b8",
         transition: "all 0.25s linear",
+    },
+    toggleButton: {
+        toggleBorder: "#fff",
+        // gradient: "linear-gradient(#091236, #1E215D)",
+        gradient: "#000",
+        switchColor: "#fff",
+        transformLight: "translateY(100px)",
+        transformDark: "translateY(0)",
     }
 
 };

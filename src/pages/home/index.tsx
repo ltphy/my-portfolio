@@ -30,7 +30,7 @@ const Home = (homeProps: HomeProps) => {
                 return (
                     <div key={route.title} id={route.title} ref={(ref: HTMLDivElement) => {
                         hashRoutes.current[route.title] = ref
-                    }} style={{"scrollMarginTop": "6rem"}}>
+                    }} style={{"scrollMarginTop": "7rem"}}>
                         <route.component/>
                     </div>
                 );
