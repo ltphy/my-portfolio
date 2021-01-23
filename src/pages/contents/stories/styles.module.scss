@@ -1,7 +1,15 @@
-.content_wrapper {
-  padding: 100px;
 
   .my_img {
-    width: 350px;
+    background-image: url("../../../resources/phy.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
   }
-}
+

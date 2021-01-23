@@ -24,8 +24,10 @@ export const lightTheme = {
         backgroundColor: "#fff",
         color: "#000",
         transition: "all 0.25s linear",
+        fontSize: "30rem",
     },
     content: {
+        fontSize: "large",
         backgroundColor: "#fff",
         color: "#000",
         transition: "all 0.25s linear",
@@ -37,6 +39,9 @@ export const lightTheme = {
         switchColor: "#000",
         transformLight: "translateY(0)",
         transformDark: "translateY(-100px)"
+    },
+    title: {
+
     }
 };
 
@@ -45,6 +50,7 @@ export const darkTheme = {
         backgroundColor: "#18191a",
         color: "#b0b3b8",
         transition: "all 0.25s linear",
+        fontSize: "xxx-large",
     },
     navBar: {
         backgroundColor: "#242526",
