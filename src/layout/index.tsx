@@ -34,7 +34,7 @@ const MainLayout = (props: layoutProps) => {
                 {props.children}
             </HashContextProvider>
 
-            <Footer/>
+            {/*<Footer/>*/}
         </ThemeProvider>);
 };
 

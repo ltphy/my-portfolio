@@ -8,6 +8,8 @@ export interface Theme {
         backgroundColor: string;
         color: string;
         transition: string;
+        fontSize: string;
+        fontFamily: string;
     }
     toggleButton: {
         gradient: string;
@@ -27,10 +29,11 @@ export const lightTheme = {
         fontSize: "30rem",
     },
     content: {
-        fontSize: "large",
+        fontSize: "16px",
         backgroundColor: "#fff",
         color: "#000",
         transition: "all 0.25s linear",
+        fontFamily: "Roboto, sans-serif",
     },
     toggleButton: {
         toggleBorder: "black",
@@ -40,9 +43,7 @@ export const lightTheme = {
         transformLight: "translateY(0)",
         transformDark: "translateY(-100px)"
     },
-    title: {
-
-    }
+    title: {}
 };
 
 export const darkTheme = {
@@ -50,7 +51,8 @@ export const darkTheme = {
         backgroundColor: "#18191a",
         color: "#b0b3b8",
         transition: "all 0.25s linear",
-        fontSize: "xxx-large",
+        fontSize: "16px",
+        fontFamily: "Roboto, sans-serif",
     },
     navBar: {
         backgroundColor: "#242526",

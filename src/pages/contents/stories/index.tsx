@@ -1,26 +1,60 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./styles.module.scss";
 import phy from '../../../resources/phy.jpg'
 import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import {Col, Row} from "react-bootstrap";
+import {fields} from "./stories.constants";
+import {typeSpeed} from "../../../constants/default_constants";
 
 const Stories = () => {
     //will render
     const useTheme = useThemeContext();
-    return (<Row  style={useTheme.content}>
-        <div className={styles.my_img}></div>
+    useEffect(() => {
+        typeWriter(fields[0], fields);
+    }, []);
+    const [typeText, setTypeText] = useState<string>('');
 
-        {/*<Col sm={8} style={useTheme.content}>*/}
-        {/*    /!*<div>*!/*/}
-        {/*    /!*    Hello I am  Lieng The Phy, a software engineer &. I have studied in Ho Chi Minh University of Science*!/*/}
-        {/*    /!*    and obtained my Bachelor of Computer Science in 2019.*!/*/}
-        {/*    /!*</div>*!/*/}
+    const typeWriter = (text: string, textFields: string[]) => {
+        if (text.length === 0) {
+            // remove the previous value
+            setTypeText('');
+            textFields = textFields.slice(1);
+            if (textFields.length === 0)
+                textFields = fields;
+            typeWriter(textFields[0], textFields);
 
-        {/*    /!*<div>*!/*/}
-        {/*    /!*    Love to workout besides programming.*!/*/}
-        {/*    /!*</div>*!/*/}
+        } else {
+            setTypeText((prevState => {
+                return prevState + text[0];
+            }));
+            setTimeout(() => typeWriter(text.slice(1), textFields), typeSpeed);
+        }
+    };
 
-        {/*</Col>*/}
+    return (<Row style={useTheme.content}>
+        <div className={styles.my_img}>
+
+        </div>
+        <div className={styles.title_content}>
+            <div className={styles.layout_content}>
+                <h4>
+                    Hi, I am
+                </h4>
+                <h2 className={styles.page_title}>
+                    Lieng The Phy
+                </h2>
+                <h4>
+                    I am {' '}
+                    <strong className={styles.typewriter2}>
+                        {typeText}
+                    </strong>
+                    {/*<div className={styles.typewrapper}>*/}
+                    {/*    <h1 className={styles.typewriter}>The cat and the hat.</h1>*/}
+
+                    {/*</div>*/}
+                </h4>
+            </div>
+        </div>
     </Row>);
 };
 export default Stories;

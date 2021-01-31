@@ -27,20 +27,18 @@ const Home = (homeProps: HomeProps) => {
     return (<div className={styles.content_wrapper}>
         {
             homeRouters.map((route) => {
+                // return (
+                //     <div key={route.title} id={route.title} ref={(ref: HTMLDivElement) => {
+                //         hashRoutes.current[route.title] = ref
+                //     }} style={{"scrollMarginTop": "7rem"}}>
+                //         <route.component/>
+                //     </div>
+                // );
                 return (
-                    <div key={route.title} id={route.title} ref={(ref: HTMLDivElement) => {
-                        hashRoutes.current[route.title] = ref
-                    }} style={{"scrollMarginTop": "7rem"}}>
+                    <div>
                         <route.component/>
                     </div>
                 );
-                // return (
-                //     <Link to={{hash: route.title}} ref={(ref: Link) => {
-                //         hashRoute.current[route.title] = ref
-                //     }}>
-                //         <route.component/>
-                //     </Link>
-                // );
             })
         }
     </div>);

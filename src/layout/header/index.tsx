@@ -40,39 +40,40 @@ const Header = (headerProps: HeaderProps) => {
     });
     //this header is not used to move to other route but instead to move to certain href element
     return (
-        <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper} style={useTheme.navBar}>
-            <Container fluid>
-                <Col className={styles.brandWrapper}>
-                    <Navbar.Brand className={styles.brand} style={{"color": useTheme.navBar.color}}>
-                        Phy Lieng
-                    </Navbar.Brand>
-                </Col>
-                {/*To create a toggle button for nav bar*/}
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.toggle}>
-                    Menu <FontAwesomeIcon icon={faBars}/>
-                </Navbar.Toggle>
-                <Navbar.Collapse id={"responsive-navbar-nav"} className={styles.nav_container}>
-                    <Nav>
-                        {
-                            homeRouters.map((route: IHomeRouter, index: number) => {
-                                return (
-                                    route.showHeaderNavBar &&
-                                    (<Nav.Link className={styles.route} style={{"color": useTheme.navBar.color}}
-                                               key={route.title} onClick={() => {
-                                        headerProps.changeNavTab(route.title);
-                                    }}>
-                                        {route.title}
-                                    </Nav.Link>)
-                                );
-                            })
-
-                        }
-
-                    </Nav>
-                </Navbar.Collapse>
-
-            </Container>
-        </Navbar>
+        <div></div>
+        // <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper} style={useTheme.navBar}>
+        //     <Container fluid>
+        //         <Col className={styles.brandWrapper}>
+        //             <Navbar.Brand className={styles.brand} style={{"color": useTheme.navBar.color}}>
+        //                 Phy Lieng
+        //             </Navbar.Brand>
+        //         </Col>
+        //         {/*To create a toggle button for nav bar*/}
+        //         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.toggle}>
+        //             Menu <FontAwesomeIcon icon={faBars}/>
+        //         </Navbar.Toggle>
+        //         <Navbar.Collapse id={"responsive-navbar-nav"} className={styles.nav_container}>
+        //             <Nav>
+        //                 {
+        //                     homeRouters.map((route: IHomeRouter, index: number) => {
+        //                         return (
+        //                             route.showHeaderNavBar &&
+        //                             (<Nav.Link className={styles.route} style={{"color": useTheme.navBar.color}}
+        //                                        key={route.title} onClick={() => {
+        //                                 headerProps.changeNavTab(route.title);
+        //                             }}>
+        //                                 {route.title}
+        //                             </Nav.Link>)
+        //                         );
+        //                     })
+        //
+        //                 }
+        //
+        //             </Nav>
+        //         </Navbar.Collapse>
+        //
+        //     </Container>
+        // </Navbar>
     );
 };
 export default Header;
