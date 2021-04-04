@@ -1,17 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {Navbar, Nav, Row, Col, Container} from 'react-bootstrap';
-import {routes, IRouter} from "../../constants/routes.constant";
-import styles from "./styles.module.scss"
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faBars, faHamburger} from '@fortawesome/free-solid-svg-icons';
-import {homeRouters, IHomeRouter} from "../../constants/home_routes.constants";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import {darkTheme, lightTheme} from "../../constants/theme_mode";
-import Switch, {SwitchProps, SwitchClassKey} from '@material-ui/core/Switch';
+import {SwitchClassKey, SwitchProps} from '@material-ui/core/Switch';
 import {useThemeContext} from "../../context/ThemeProvider/theme.context";
-import {createStyles, Theme, withStyles} from "@material-ui/core";
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
+import {AppBar, Toolbar} from "@material-ui/core";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from '@material-ui/icons/Menu';
+import Typography from "@material-ui/core/Typography";
+import {useDrawerToggleContext} from "../../context/DrawerOpenProvider/drawerOpenProvider.context";
+import makeStyles from "@material-ui/core/styles/makeStyles";
+import clsx from 'clsx';
+import {drawerWidth} from "../../constants/default_constants";
 
 interface Styles extends Partial<Record<SwitchClassKey, string>> {
     focusVisible?: string;
@@ -26,21 +23,56 @@ interface HeaderProps {
     switchTheme: (theme: boolean) => void;
 }
 
+const useStyle = makeStyles((theme) => ({
+    menuButton: {
+        marginRight: theme.spacing(2),
+    },
+    hide: {
+        display: 'none'
+    },
+    appBar: {
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+    },
+    appBarShift: {
+        width: `calc(100% - ${drawerWidth}px)`,
+        marginLeft: drawerWidth,
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.easeOut,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+    },
+}));
 const Header = (headerProps: HeaderProps) => {
 
     const [themeMode, setThemeMode] = useState<boolean>();
     const useTheme = useThemeContext();
+    const useDrawerToggle = useDrawerToggleContext();
+    const theme = useStyle();
     const switchThemeMode = (event: React.ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.checked);
         setThemeMode(event.target.checked);
         headerProps.switchTheme(event.target.checked);
     };
-    useEffect(() => {
-        console.log(JSON.stringify(useTheme.toggleButton));
-    });
+
     //this header is not used to move to other route but instead to move to certain href element
     return (
-        <div></div>
+
+        <AppBar position={'fixed'} className={clsx(theme.appBar, {[theme.appBarShift]: true})}>
+            <Toolbar>
+                <IconButton color={"inherit"} aria-label={"open drawer"}
+                            onClick={() => useDrawerToggle.toggleOpen(!useDrawerToggle.open)} edge="start"
+                            className={clsx(theme.menuButton, useDrawerToggle.open && theme.hide)}
+                >
+                    <MenuIcon/>
+                </IconButton>
+                <Typography variant={'h6'} noWrap>
+                    Lieng The Phy
+                </Typography>
+            </Toolbar>
+        </AppBar>
         // <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper} style={useTheme.navBar}>
         //     <Container fluid>
         //         <Col className={styles.brandWrapper}>
