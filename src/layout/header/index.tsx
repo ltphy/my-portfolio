@@ -31,6 +31,7 @@ const useStyle = makeStyles((theme) => ({
         display: 'none'
     },
     appBar: {
+        zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
@@ -44,6 +45,11 @@ const useStyle = makeStyles((theme) => ({
             duration: theme.transitions.duration.enteringScreen,
         }),
     },
+    headerTitle: {
+        marginLeft: "auto",
+        marginRight: "auto",
+        fontWeight: 900,
+    }
 }));
 const Header = (headerProps: HeaderProps) => {
 
@@ -56,19 +62,22 @@ const Header = (headerProps: HeaderProps) => {
         setThemeMode(event.target.checked);
         headerProps.switchTheme(event.target.checked);
     };
-
     //this header is not used to move to other route but instead to move to certain href element
     return (
 
-        <AppBar position={'fixed'} className={clsx(theme.appBar, {[theme.appBarShift]: true})}>
+        <AppBar position={'fixed'} className={clsx(theme.appBar, {[theme.appBarShift]: useDrawerToggle.open})}>
             <Toolbar>
                 <IconButton color={"inherit"} aria-label={"open drawer"}
-                            onClick={() => useDrawerToggle.toggleOpen(!useDrawerToggle.open)} edge="start"
+                            onClick={() => {
+                                console.log('onCLick', useDrawerToggle.open);
+                                console.log('function', useDrawerToggle.toggleOpen);
+                                useDrawerToggle.toggleOpen(!useDrawerToggle.open);
+                            }} edge="start"
                             className={clsx(theme.menuButton, useDrawerToggle.open && theme.hide)}
                 >
                     <MenuIcon/>
                 </IconButton>
-                <Typography variant={'h6'} noWrap>
+                <Typography variant={'h5'} noWrap className={theme.headerTitle}>
                     Lieng The Phy
                 </Typography>
             </Toolbar>

@@ -9,6 +9,8 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import {drawerWidth} from '../constants/default_constants';
 import clsx from 'clsx';
 import {useDrawerToggleContext} from "../context/DrawerOpenProvider/drawerOpenProvider.context";
+import CustomDrawer from "../components/custom_drawer/custom_drawer";
+import style from './styles.module.scss';
 
 interface layoutProps {
     children: any;
@@ -53,14 +55,16 @@ const MainLayout = (props: layoutProps) => {
     };
     return (
         <ThemeProvider theme={themeValue}>
-            <Header changeNavTab={setHashNavValue} switchTheme={switchTheme}/>
-            <HashContextProvider hashValue={hashValue}>
-                <main className={clsx(classes.content, {[classes.contentShift]: useDrawerToggle.open})}>
-                    {props.children}
-                </main>
+            <div className={style.root}>
+                <Header changeNavTab={setHashNavValue} switchTheme={switchTheme}/>
+                <CustomDrawer/>
+                <HashContextProvider hashValue={hashValue}>
+                    <main className={clsx(classes.content, {[classes.contentShift]: useDrawerToggle.open})}>
+                        {props.children}
+                    </main>
 
-            </HashContextProvider>
-
+                </HashContextProvider>
+            </div>
             {/*<Footer/>*/}
         </ThemeProvider>);
 };

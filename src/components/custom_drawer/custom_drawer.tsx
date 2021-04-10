@@ -10,6 +10,7 @@ import List from "@material-ui/core/List";
 import {IRouter, routes} from "../../constants/routes.constant";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
     drawer: {
@@ -27,6 +28,33 @@ const useStyles = makeStyles((theme) => ({
         ...theme.mixins.toolbar,
         justifyContent: 'flex-end',
     },
+    drawerOpen: {
+        width: drawerWidth,
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+    },
+    drawerClose: {
+        transition: theme.transitions.create(['margin', 'width'], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+        // theme.spacing default 8px x 7 for icon
+        width: theme.spacing(7) + 1,
+        [theme.breakpoints.up("sm")]: {
+            width: theme.spacing(9) + 1
+        }
+    },
+    toolbar: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignContent: 'center',
+        padding: theme.spacing(1, 1),
+
+        // necessary for content to be below app bar
+        ...theme.mixins.toolbar
+    }
 }));
 
 const CustomDrawer = () => {
@@ -35,29 +63,37 @@ const CustomDrawer = () => {
 
     return (
         <Drawer
-            className={theme.drawer}
+            className={clsx(theme.drawer, {
+                [theme.drawerOpen]: useDrawerToggle.open,
+                [theme.drawerClose]: !useDrawerToggle.open
+            })}
+            classes={{
+                paper: clsx({
+                    [theme.drawerOpen]: useDrawerToggle.open,
+                    [theme.drawerClose]: !useDrawerToggle.open,
+                }),
+            }}
             open={useDrawerToggle.open}
-            variant={'persistent'}
+            variant={'permanent'}
             anchor={'left'}
 
         >
-            <div>
+            <div className={theme.toolbar}>
                 <IconButton onClick={() => {
                     useDrawerToggle.toggleOpen(false);
                 }}>
                     <ChevronLeftOutlined/>
                 </IconButton>
             </div>
-            <Divider/>
             <List>
                 {
-                    routes.map((route: IRouter) => (
-                        <ListItem button key={route.title}>
-                            <ListItemIcon> {route.icon}</ListItemIcon>
-                            <ListItemText> {route.title}</ListItemText>
-                        </ListItem>
-
-                    ))
+                    // routes.map((route: IRouter) => (
+                    //     <ListItem button key={route.title}>
+                    //         <ListItemIcon> {route.icon}</ListItemIcon>
+                    //         <ListItemText> {route.title}</ListItemText>
+                    //     </ListItem>
+                    //
+                    // ))
                 }
             </List>
         </Drawer>);

@@ -34,11 +34,11 @@ const Home = (homeProps: HomeProps) => {
                 //         <route.component/>
                 //     </div>
                 // );
-                return (
-                    <div>
-                        <route.component/>
-                    </div>
-                );
+                // return (
+                //     <div>
+                //         <route.component/>
+                //     </div>
+                // );
             })
         }
     </div>);

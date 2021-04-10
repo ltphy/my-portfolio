@@ -12,11 +12,13 @@ const Stories = () => {
     useEffect(() => {
         typeWriter(fields[0], fields);
         // typeWriter2();
+        return () => {
+            setTypeText('');
+        };
     }, []);
     const [typeText, setTypeText] = useState<string>('');
 
     const typeWriter = (text: string, textFields: string[]) => {
-        console.log(text);
         if (text.length === 0) {
             // remove the previous value
             setTypeText('');
@@ -35,7 +37,6 @@ const Stories = () => {
 
     return (<Row style={useTheme.content}>
         <div className={styles.my_img}>
-
 
         </div>
         <div className={styles.title_content}>
