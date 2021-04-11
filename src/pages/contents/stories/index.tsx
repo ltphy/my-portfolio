@@ -9,11 +9,13 @@ import {typeSpeed} from "../../../constants/default_constants";
 const Stories = () => {
     //will render
     const useTheme = useThemeContext();
+    let timeoutList: NodeJS.Timeout[] = [];
     useEffect(() => {
-        typeWriter(fields[0], fields);
+        const typeWriterTimeOut = typeWriter(fields[0], fields);
         // typeWriter2();
         return () => {
             setTypeText('');
+            timeoutList.forEach((timeout) => clearTimeout(timeout));
         };
     }, []);
     const [typeText, setTypeText] = useState<string>('');
@@ -31,7 +33,8 @@ const Stories = () => {
             setTypeText((prevState => {
                 return prevState + text[0];
             }));
-            setTimeout(() => typeWriter(text.slice(1), textFields), typeSpeed);
+            const timeout = setTimeout(() => typeWriter(text.slice(1), textFields), typeSpeed);
+            timeoutList.push(timeout);
         }
     };
 

@@ -1,8 +1,7 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React from 'react';
 import './App.css';
-import Home from "./pages/home";
 import MainLayout from "./layout";
-import {Route, Switch, withRouter, BrowserRouter as Router, HashRouter} from 'react-router-dom';
+import {MemoryRouter, Route, Switch} from 'react-router-dom';
 import {IRouter, routes} from "./constants/routes.constant";
 import {DrawerToggleProvider} from "./context/DrawerOpenProvider/drawerOpenProvider.context";
 
@@ -81,16 +80,16 @@ class App extends React.Component<AppProps, AppState> {
             </Switch>
         );
     };
+
     render() {
         return (
-            <Router>
+            <MemoryRouter initialEntries={[routes[0].path]} initialIndex={0}>
                 <DrawerToggleProvider drawerToggle={this.state}>
-
                     <MainLayout>
                         <this.RenderMainRoute/>
                     </MainLayout>
                 </DrawerToggleProvider>
-            </Router>
+            </MemoryRouter>
 
         );
     }

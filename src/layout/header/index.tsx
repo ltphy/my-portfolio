@@ -26,11 +26,14 @@ interface HeaderProps {
 const useStyle = makeStyles((theme) => ({
     menuButton: {
         marginRight: theme.spacing(2),
+        color: "#000000",
+
     },
     hide: {
         display: 'none'
     },
     appBar: {
+        backgroundColor: "#ffffff",
         zIndex: theme.zIndex.drawer + 1,
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
@@ -49,6 +52,8 @@ const useStyle = makeStyles((theme) => ({
         marginLeft: "auto",
         marginRight: "auto",
         fontWeight: 900,
+        color: "#000000",
+
     }
 }));
 const Header = (headerProps: HeaderProps) => {

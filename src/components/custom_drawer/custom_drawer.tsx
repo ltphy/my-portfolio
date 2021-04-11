@@ -11,11 +11,15 @@ import {IRouter, routes} from "../../constants/routes.constant";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import clsx from "clsx";
+import MailIcon from "@material-ui/icons/Mail";
+import ListItemLink from "./list_item_link/list_item_link";
 
 const useStyles = makeStyles((theme) => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
+        whiteSpace: "nowrap"
+
     },
     drawerPaper: {
         width: drawerWidth,
@@ -30,13 +34,13 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerOpen: {
         width: drawerWidth,
-        transition: theme.transitions.create(['margin', 'width'], {
+        transition: theme.transitions.create('width', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
     },
     drawerClose: {
-        transition: theme.transitions.create(['margin', 'width'], {
+        transition: theme.transitions.create( 'width', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
@@ -45,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up("sm")]: {
             width: theme.spacing(9) + 1
         }
+
     },
     toolbar: {
         display: 'flex',
@@ -87,14 +92,14 @@ const CustomDrawer = () => {
             </div>
             <List>
                 {
-                    // routes.map((route: IRouter) => (
-                    //     <ListItem button key={route.title}>
-                    //         <ListItemIcon> {route.icon}</ListItemIcon>
-                    //         <ListItemText> {route.title}</ListItemText>
-                    //     </ListItem>
-                    //
-                    // ))
+                    routes.map((route: IRouter, index: number) => {
+                            return (<ListItemLink key={route.title} primary={route.title} iconRender={route.iconRender}
+                                                  to={route.path}/>);
+                        }
+                    )
                 }
+
+
             </List>
         </Drawer>);
 };
