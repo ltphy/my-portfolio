@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
         width: drawerWidth,
         flexShrink: 0,
         whiteSpace: "nowrap"
-
     },
     drawerPaper: {
         width: drawerWidth,
@@ -40,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         }),
     },
     drawerClose: {
-        transition: theme.transitions.create( 'width', {
+        transition: theme.transitions.create('width', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
@@ -48,7 +47,10 @@ const useStyles = makeStyles((theme) => ({
         width: theme.spacing(7) + 1,
         [theme.breakpoints.up("sm")]: {
             width: theme.spacing(9) + 1
-        }
+        },
+        // property specifies whether to clip the content, add a scroll bar, or display overflow content of a block-level element.
+
+        overflowX: "hidden"
 
     },
     toolbar: {
@@ -93,14 +95,16 @@ const CustomDrawer = () => {
             <List>
                 {
                     routes.map((route: IRouter, index: number) => {
-                            return (<ListItemLink key={route.title} primary={route.title} iconRender={route.iconRender}
-                                                  to={route.path}/>);
+                            return (<> <ListItemLink key={route.title} primary={route.title} iconRender={route.iconRender}
+                                                     to={route.path}/> <Divider/> </>);
                         }
                     )
                 }
 
-
             </List>
+            <div>
+
+            </div>
         </Drawer>);
 };
 

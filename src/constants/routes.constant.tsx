@@ -1,8 +1,8 @@
 import Stories from "../pages/contents/stories";
 import About from "../pages/contents/about";
-import {Face, HomeOutlined} from '@material-ui/icons/';
-import MailIcon from "@material-ui/icons/Mail";
+import {Face, HomeOutlined, PhoneAndroid} from '@material-ui/icons/';
 import React from "react";
+import Contact from "../pages/contents/contact";
 
 export interface IRouter {
     component: any;
@@ -20,7 +20,7 @@ export const routes: IRouter[] = [
             return (<HomeOutlined/>);
         },
         isPrivate: false,
-        title: "Stories",
+        title: "HOME",
         showHeaderNavBar: true,
         path: "/",
     },
@@ -30,9 +30,18 @@ export const routes: IRouter[] = [
             return (<Face/>);
         },
         isPrivate: false,
-        title: "About",
+        title: "ABOUT",
         showHeaderNavBar: true,
         path: "/About",
     },
-
+    {
+        component: Contact,
+        iconRender: () => {
+            return (<PhoneAndroid/>);
+        },
+        isPrivate: false,
+        title: "CONTACT",
+        showHeaderNavBar: true,
+        path: "/Contact",
+    },
 ];
