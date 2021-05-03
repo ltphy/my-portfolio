@@ -11,6 +11,7 @@ const useStyle = makeStyles((theme) => ({
         borderRadius: 4,
         backgroundColor: '#fcfcfc',
         transition: theme.transitions.create(['border-color', 'box-shadow']),
+        marginBottom: theme.spacing(1),
         '&:hover': {
             backgroundColor: '#fff'
         },
@@ -33,6 +34,8 @@ interface CustomTextFieldProps {
     label: string;
     defaultValue?: string;
     errors?: any;
+    multiline?: boolean;
+    rows?: number;
 }
 
 const CustomTextField = (props: CustomTextFieldProps) => {
@@ -49,7 +52,10 @@ const CustomTextField = (props: CustomTextFieldProps) => {
                                            onBlur={onBlur}
                                            value={value}
                                            label={props.label}
+                                           multiline={props.multiline}
+                                           fullWidth
                                            variant={'filled'}
+                                           rows={props.rows}
                                            InputProps={{classes: {root: redditStyles.root}, disableUnderline: true}}
                         />);
                     }}/>

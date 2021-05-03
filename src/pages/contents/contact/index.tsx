@@ -4,6 +4,7 @@ import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import Grid from '@material-ui/core/Grid';
 import {Divider} from "@material-ui/core";
 import ContactForm from "./contact_form/contact_form";
+import ContactLinks from "./contact_links";
 
 const Contact = () => {
     const useTheme = useThemeContext();
@@ -21,6 +22,8 @@ const Contact = () => {
 
         <h2>Contact Form</h2>
         <ContactForm/>
+
+        <ContactLinks/>
     </div>);
 };
 export default Contact;
