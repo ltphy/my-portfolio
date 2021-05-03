@@ -7,7 +7,6 @@ import ContactForm from "./contact_form/contact_form";
 
 const Contact = () => {
     const useTheme = useThemeContext();
-
     return (<div className={styles.content_wrapper} style={useTheme.content}>
         <h1> Get in Touch</h1>
         <Divider/>

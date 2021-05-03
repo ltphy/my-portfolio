@@ -1,8 +1,6 @@
 import React from 'react';
 import {fade, makeStyles, TextField} from "@material-ui/core";
 import {Control, Controller} from "react-hook-form";
-import {ErrorMessage} from "@hookform/error-message";
-import {Warning} from "@material-ui/icons";
 
 const useStyle = makeStyles((theme) => ({
     root: {
@@ -21,9 +19,7 @@ const useStyle = makeStyles((theme) => ({
         }
 
     },
-    error_message: {
-        color: '#F20505',
-    }
+    focused: {},
 
 }));
 
@@ -31,37 +27,24 @@ interface CustomTextFieldProps {
     name: string;
     control: Control<Record<string, any>>;
     label: string;
-    defaultValue?: string;
-    errors?: any;
 }
 
 const CustomTextField = (props: CustomTextFieldProps) => {
 
     const redditStyles = useStyle();
-    return (<div>
+
+    return (
         <Controller name={props.name}
                     control={props.control}
-                    defaultValue={props.defaultValue || ''}
                     render={({field: {onChange, onBlur, value}}) => {
-                        console.log(value);
-                        console.log(props.label)
                         return (<TextField onChange={onChange}
                                            onBlur={onBlur}
-                                           value={value}
                                            label={props.label}
                                            variant={'filled'}
-                                           InputProps={{classes: {root: redditStyles.root}, disableUnderline: true}}
+                                           value={value}
+                                           InputProps={{classes: redditStyles, disableUnderline: true}}
                         />);
                     }}/>
-        <div className={redditStyles.error_message}>
-            {props.errors[props.name] != null ?
-                <>
-                    <Warning fontSize={'small'}/>
-                    <ErrorMessage errors={props.errors} name={props.name}/>
-                </>
-                : <></>}
-        </div>
-
-    </div>);
+    );
 };
 export default CustomTextField;

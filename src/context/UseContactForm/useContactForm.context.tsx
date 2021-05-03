@@ -12,19 +12,20 @@ interface ContactInterface {
 const useContactForm = () => {
     const validationSchema = useMemo(() => {
         return yup.object({
-            name: yup.string().required('Name is required'),
-            email: yup.string().email().required('email is required'),
-            message: yup.string().required('Message is required'),
+            name: yup.string().required('Name is required').default(''),
+            email: yup.string().email().required('Email is required').default(''),
+            message: yup.string().required('Message is required').default(''),
         });
     }, []);
-
-    const {register, handleSubmit, } = useForm<ContactInterface>({resolver: yupResolver(validationSchema)});
+    const {handleSubmit, formState, control} = useForm<ContactInterface>({
+        resolver: yupResolver(validationSchema), defaultValues: validationSchema.cast({})
+    });
 
     const onSubmit = useCallback((formValues) => {
         console.log(formValues);
     }, []);
 
-    return {register, onSubmit: handleSubmit(onSubmit)}
+    return {control, onSubmit: handleSubmit(onSubmit), formState};
 
 
 };
