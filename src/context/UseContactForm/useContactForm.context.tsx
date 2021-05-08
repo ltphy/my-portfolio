@@ -1,15 +1,19 @@
-import {useCallback, useMemo} from "react";
+import {ReactElement, useCallback, useMemo} from "react";
 import * as yup from "yup";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
+import emailjs from 'emailjs-com';
+import {serviceID, templateID, userID} from "../../constants/default_constants";
 
 interface ContactInterface {
     name: string;
     email: string;
     message: string;
 }
-
-const useContactForm = () => {
+interface useContactFormProps {
+    sendEmail: (formValues: any) => void;
+}
+const useContactForm = ({sendEmail}: useContactFormProps) => {
     const validationSchema = useMemo(() => {
         return yup.object({
             name: yup.string().required('Name is required').default(''),
@@ -21,8 +25,8 @@ const useContactForm = () => {
         resolver: yupResolver(validationSchema), defaultValues: validationSchema.cast({})
     });
 
-    const onSubmit = useCallback((formValues) => {
-        console.log(formValues);
+    const onSubmit = useCallback(async (formValues) => {
+        await sendEmail(formValues);
     }, []);
 
     return {control, onSubmit: handleSubmit(onSubmit), formState};

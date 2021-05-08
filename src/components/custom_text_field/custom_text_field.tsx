@@ -46,8 +46,6 @@ const CustomTextField = (props: CustomTextFieldProps) => {
                     control={props.control}
                     defaultValue={props.defaultValue || ''}
                     render={({field: {onChange, onBlur, value}}) => {
-                        console.log(value);
-                        console.log(props.label)
                         return (<TextField onChange={onChange}
                                            onBlur={onBlur}
                                            value={value}
