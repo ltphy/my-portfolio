@@ -1,12 +1,7 @@
 import React, {useRef, useState} from 'react';
-import {Container} from "react-bootstrap";
-import Footer from './footer';
 import Header from './header';
 import {HashContextProvider, HashValue} from "../context/hash.context";
-import {ThemeProvider} from '../context/ThemeProvider/theme.context';
-import {darkTheme, lightTheme, Theme} from "../constants/theme_mode";
-import makeStyles from '@material-ui/core/styles/makeStyles';
-import {drawerWidth} from '../constants/default_constants';
+import {makeStyles, ThemeProvider, useTheme} from '@material-ui/core/styles';
 import clsx from 'clsx';
 import {useDrawerToggleContext} from "../context/DrawerOpenProvider/drawerOpenProvider.context";
 import CustomDrawer from "../components/custom_drawer/custom_drawer";
@@ -36,26 +31,18 @@ const useStyles = makeStyles((theme) => ({
 const MainLayout = (props: layoutProps) => {
     //set context here so that I dont need to pass prop etc
     const [hashValue, setHashValue] = useState<HashValue>({hashName: ""});
-    const [themeValue, setThemeValue] = useState<Theme>(lightTheme);
     const useDrawerToggle = useDrawerToggleContext();
     const classes = useStyles();
-    const setHashNavValue = (hashNav: string) => {
-        //because this is a new object => and there fore force rerender
-        //if use a normal string It wont force rerender because of React
-        const newHashValue: HashValue = {hashName: hashNav};
-        setHashValue(newHashValue);
-    };
-    const switchTheme = (switchTheme: boolean) => {
-        if (switchTheme) {
-            setThemeValue(darkTheme);
-        } else {
-            setThemeValue(lightTheme);
-        }
-    };
+    // const setHashNavValue = (hashNav: string) => {
+    //     //because this is a new object => and there fore force rerender
+    //     //if use a normal string It wont force rerender because of React
+    //     const newHashValue: HashValue = {hashName: hashNav};
+    //     setHashValue(newHashValue);
+    // };
+
     return (
-        <ThemeProvider theme={themeValue}>
             <div className={style.root}>
-                <Header changeNavTab={setHashNavValue} switchTheme={switchTheme}/>
+                <Header/>
                 <CustomDrawer/>
                 <HashContextProvider hashValue={hashValue}>
                     <main className={clsx(classes.content, {[classes.contentShift]: useDrawerToggle.open})}>
@@ -63,9 +50,7 @@ const MainLayout = (props: layoutProps) => {
                     </main>
 
                 </HashContextProvider>
-            </div>
-            {/*<Footer/>*/}
-        </ThemeProvider>);
+            </div>);
 };
 
 export default MainLayout;

@@ -19,8 +19,8 @@ interface Props extends SwitchProps {
 }
 
 interface HeaderProps {
-    changeNavTab: (hashNavValue: string) => void;
-    switchTheme: (theme: boolean) => void;
+    changeNavTab?: (hashNavValue: string) => void;
+    switchTheme?: (theme: boolean) => void;
 }
 
 const useStyle = makeStyles((theme) => ({
@@ -58,15 +58,15 @@ const useStyle = makeStyles((theme) => ({
 }));
 const Header = (headerProps: HeaderProps) => {
 
-    const [themeMode, setThemeMode] = useState<boolean>();
-    const useTheme = useThemeContext();
+    // const [themeMode, setThemeMode] = useState<boolean>();
+    // const useTheme = useThemeContext();
     const useDrawerToggle = useDrawerToggleContext();
     const theme = useStyle();
-    const switchThemeMode = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.checked);
-        setThemeMode(event.target.checked);
-        headerProps.switchTheme(event.target.checked);
-    };
+    // const switchThemeMode = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     console.log(event.target.checked);
+    //     setThemeMode(event.target.checked);
+    //     headerProps.switchTheme(event.target.checked);
+    // };
     //this header is not used to move to other route but instead to move to certain href element
     return (
 
