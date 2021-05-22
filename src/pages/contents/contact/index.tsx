@@ -22,9 +22,6 @@ const useStyles = makeStyles((theme) => ({
     },
     contentWrapper: {
         padding: '80px',
-        boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
-        background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-        color: "white"
     },
     title: {
         fontWeight: 'bold'
