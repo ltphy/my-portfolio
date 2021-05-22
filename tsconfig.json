@@ -4,7 +4,7 @@
     "lib": [
       "es5",
       "es6",
-      "dom",
+      "dom"
     ],
     "target": "es6",
     "module": "esnext",
@@ -21,7 +21,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": [
     "node_modules"
