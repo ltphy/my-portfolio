@@ -3,25 +3,25 @@ import {ListItemIcon} from "@material-ui/core";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItem from "@material-ui/core/ListItem";
 import {Link as RouterLink} from 'react-router-dom';
+import {IRouter} from "../../../constants/routes.constant";
 
 interface ListItemLinkProps {
-    iconRender: () => any;
-    primary: string;
-    to: string;
+    route: IRouter
 }
 
 const ListItemLink = (props: ListItemLinkProps) => {
-    const {iconRender, primary, to} = props;
-    // update render Link whenever to change.
+    // get the render item =>
+    const {route} = props;
+    const {path, iconRender, title} = route;
+    // update render Link whenever to change the route
     const renderLink = useMemo(() => {
-        console.log('to', to);
-        return forwardRef((itemProps, ref: any) => <RouterLink to={to}
+        return forwardRef((itemProps, ref: any) => <RouterLink to={{pathname: path}}
                                                                ref={ref} {...itemProps}/>);
-    }, [to]);
+    }, [path]);
     return (
         <ListItem button component={renderLink}>
             <ListItemIcon> {iconRender()}</ListItemIcon>
-            <ListItemText primary={primary}/>
+            <ListItemText primary={title}/>
         </ListItem>
     );
 };

@@ -11,6 +11,7 @@ export interface IRouter {
     title: string,
     showHeaderNavBar: boolean,
     path: string,
+    exact: boolean,
 }
 
 export const routes: IRouter[] = [
@@ -23,6 +24,7 @@ export const routes: IRouter[] = [
         title: "HOME",
         showHeaderNavBar: true,
         path: "/",
+        exact: true
     },
     {
         component: About,
@@ -32,7 +34,9 @@ export const routes: IRouter[] = [
         isPrivate: false,
         title: "ABOUT",
         showHeaderNavBar: true,
-        path: "/About",
+        path: "/about",
+        exact: true
+
     },
     {
         component: Contact,
@@ -42,6 +46,7 @@ export const routes: IRouter[] = [
         isPrivate: false,
         title: "CONTACT",
         showHeaderNavBar: true,
-        path: "/Contact",
+        path: "/contact",
+        exact: true
     },
 ];

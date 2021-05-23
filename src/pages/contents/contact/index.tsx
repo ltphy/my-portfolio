@@ -6,6 +6,7 @@ import {Divider, Paper} from "@material-ui/core";
 import ContactForm from "./contact_form/contact_form";
 import ContactLinks from "./contact_links";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import {withRouter} from "react-router";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -79,4 +80,4 @@ const Contact = () => {
         <ContactLinks/>
     </div>);
 };
-export default Contact;
+export default withRouter(Contact);
