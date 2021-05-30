@@ -33,6 +33,9 @@ const Contact = () => {
 
     const theme = useThemeContext();
     const classes = useStyles();
+    const changeDate = () => {
+
+    };
     return (<div className={classes.contentWrapper}>
         <h1 className={classes.title}> Get in Touch</h1>
         <h3 className={classes.title}>Contact me</h3>
@@ -78,6 +81,9 @@ const Contact = () => {
 
 
         <ContactLinks/>
+        <div>
+
+        </div>
     </div>);
 };
 export default withRouter(Contact);

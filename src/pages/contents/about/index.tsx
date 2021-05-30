@@ -1,21 +1,21 @@
-import React from "react";
-import styles from "./styles.module.scss";
+import React, {useEffect, useRef, useState} from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Face} from "@material-ui/icons";
-import {Typography, Grid, withStyles} from "@material-ui/core";
+import {CloudDownloadOutlined, CloudUploadOutlined, Face} from "@material-ui/icons";
+import {Grid, Typography, withStyles, Button, Input} from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
-import FastfoodIcon from '@material-ui/icons/Fastfood';
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 
 import {
-    TimelineItem as MuiTimelineItem,
-    TimelineOppositeContent,
     Timeline,
+    TimelineConnector,
+    TimelineContent,
     TimelineDot,
-    TimelineSeparator,
-    TimelineConnector, TimelineContent
+    TimelineItem as MuiTimelineItem,
+    TimelineSeparator
 } from "@material-ui/lab";
 import {withRouter} from "react-router";
+import TextArea from "antd/lib/input/TextArea";
+import {downloadURL} from "./about.interfaces";
 
 const TimelineItem = withStyles({
     missingOppositeContent: {
@@ -92,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '14px',
         marginBottom: '5px'
     },
+
     paperContent: {
         padding: '8px 12px',
         marginBottom: '8px',
@@ -114,12 +115,31 @@ const useStyles = makeStyles((theme) => ({
     roleTitle: {
         textTransform: 'uppercase',
         fontWeight: 'bold'
-    }
+    },
+    rightContent: {
+        marginTop: '1rem'
+    },
+    inputWrapper: {
+        width: '100px',
+        '&$scrollWrapper': {
+            height: '200px',
+            overflowY: 'scroll'
+        }
+    },
+    scrollWrapper: {},
+    downloadWrapper: {
+        marginTop: '3rem',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
 
 }));
 
 const About = () => {
     const classes = useStyles();
+
     const drawTimeLines = () => {
         return (<>
             <Timeline>
@@ -154,20 +174,17 @@ const About = () => {
                             <div> ZMP VN Inc.</div>
 
                             <Paper elevation={4} className={classes.paperContent}>
-                                <div className={classes.projectTitle}> ForkApp ( 7
-                                    months ) - 95%
+                                <div className={classes.projectTitle}> ForkApp - 95%
                                 </div>
                                 <p> - A flutter app communicates with Redis Server to command fork lift robots.</p>
-                                <div className={classes.projectTitle}> Deep learning project
-                                    ( 4months ) - 70%
+                                <div className={classes.projectTitle}> Deep learning project - 70%
                                 </div>
                                 <div> - 3D Object Detection using point clouds.</div>
                                 <div> - Modify existing repository for the project's use case and provide a solution
                                     for real time processing.
                                 </div>
 
-                                <div className={classes.projectTitle}> Zimulator
-                                    ( 6months ) - 30%
+                                <div className={classes.projectTitle}> Zimulator - 30%
                                 </div>
                                 <p>
                                     - A Reactjs project to simulate XML structure as a config for Gazebo simulator,
@@ -177,7 +194,7 @@ const About = () => {
                                 <div className={classes.projectTitle}> Other side projects
                                 </div>
                                 <div className={classes.projectSubTitle}>
-                                    ZMapEditor- Reactjs - 5%
+                                    ZMapEditor - Reactjs - 5%
                                 </div>
                                 <span> - Using Geojson and Nebula.gl to implement some custom features to draw traffic map.</span>
                                 <div className={classes.projectSubTitle}>
@@ -199,7 +216,7 @@ const About = () => {
                             <div className={classes.event}>
                                 <h3>June 2018 - April 2019</h3>
                             </div>
-                            <Typography className={classes.roleTitle}>  R&D DEVELOPER </Typography>
+                            <Typography className={classes.roleTitle}> R&D DEVELOPER </Typography>
                             <div> BeeSight Soft Inc.</div>
 
                             <Paper elevation={4} className={classes.paperContent}>
@@ -252,9 +269,9 @@ const About = () => {
                         <div>HCMUS-University of science</div>
                         <Paper className={classes.paperContent}>
                             <div className={classes.projectTitle}> Bachelor of Computer Science, 2019</div>
-                            <div> - Graduated with GPA 8.89 </div>
-                            <div> - Student of Advanced Program in Computer Science </div>
-                            <div> - IELTS band 6.5 </div>
+                            <div> - Graduated with GPA 8.89</div>
+                            <div> - Student of Advanced Program in Computer Science</div>
+                            <div> - IELTS band 6.5</div>
                         </Paper>
 
                     </TimelineContent>
@@ -264,32 +281,69 @@ const About = () => {
     };
     const skillContent = () => {
         return (
-            <div>
+            <div className={classes.rightContent}>
+                <Typography variant={'h5'}
+                            component={'h1'}
+                            gutterBottom
+                            className={classes.title}
+                            style={{marginTop: '5.3em'}}
+                >Areas of
+                    Expertise</Typography>
 
+                <Paper className={classes.paperContent}>
+                    <ul>
+                        <li> Flutter</li>
+                        <li> ReactJS written in TypeScript</li>
+                        <li> Javascript, C++, and Python experience</li>
+                        <li> NodeJS back-end (Auth and Restfull API)</li>
+                        <li> HTML, CSS</li>
+                    </ul>
 
-                <Paper>
-                    <div>
-                        <Typography variant='h5' gutterBottom>Areas of Expertise</Typography>
-                        Working knowledge of Flutter
-                        Working knowledge of ReactJS written in TypeScript
-                        Javascript, C++, and Python experience
-                        HTML, CSS
-                        NodeJS back-end and Web API experience
-                    </div>
                 </Paper>
-                <Paper>
-                    <div>
-                        <Typography variant='h5' gutterBottom>WORK SKILLS</Typography>
-
-                        Have fundamental knowledge of Data Structures and Algorithms.
-                        Detail oriented, team player
-                        Problem solver by presenting and understanding the flow of code.
-                        Tasks breakdown, product mindset
-                        Strong self-learning ability but always eager to ask.
-                    </div>
+                <Typography variant='h5'
+                            component={'h1'}
+                            gutterBottom
+                            className={classes.title}
+                            style={{marginTop: '2.5em'}}
+                >WORK
+                    SKILLS</Typography>
+                <Paper className={classes.paperContent}>
+                    <ul>
+                        <li> Have fundamental knowledge of Data Structures and Algorithms.</li>
+                        <li> Detail oriented, team player</li>
+                        <li> Problem solver by presenting and understanding the flow of code.</li>
+                        <li> Tasks breakdown, product mindset</li>
+                        <li> Strong self-learning ability but always eager to ask.</li>
+                    </ul>
                 </Paper>
+                <div className={classes.downloadWrapper}>
+                    <Button href={downloadURL} download='cv' variant={'contained'} color="primary"
+                            startIcon={<CloudDownloadOutlined/>}
+                    >
+                        Download CV
+                    </Button>
+                </div>
+
             </div>);
     };
+
+    // useEffect(() => {
+    //     if (inputListDivRef.current) {
+    //         inputListDivRef.current.scrollTop = inputListDivRef.current.scrollHeight;
+    //     }
+    // }, [optionsList.length]);
+    //
+    // const scrollToBottom = () => {
+    //     if (inputListDivRef.current) {
+    //         const scrollHeight = inputListDivRef.current.scrollHeight;
+    //         const height = inputListDivRef.current.clientHeight;
+    //         console.log('scrollHeight');
+    //         console.log(height);
+    //         console.log(scrollHeight);
+    //         // if new
+    //     }
+    //
+    // };
     return (<div className={classes.contentWrapper}>
         <div className={classes.titleWrapper}>
             <h1 className={classes.title}>
@@ -306,12 +360,11 @@ const About = () => {
                     {renderEducationTimeline()}
                 </Grid>
                 <Grid item xs={6}>
-
+                    {skillContent()}
                 </Grid>
 
             </Grid>
         </div>
-
     </div>);
 };
 export default withRouter(About);
