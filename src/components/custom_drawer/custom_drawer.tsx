@@ -13,6 +13,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import clsx from "clsx";
 import MailIcon from "@material-ui/icons/Mail";
 import ListItemLink from "./list_item_link/list_item_link";
+import {Switch} from "react-router";
 
 const useStyles = makeStyles((theme) => ({
     drawer: {
@@ -95,16 +96,15 @@ const CustomDrawer = () => {
             <List>
                 {
                     routes.map((route: IRouter, index: number) => {
-                            return (<> <ListItemLink key={route.title} primary={route.title} iconRender={route.iconRender}
-                                                     to={route.path}/> <Divider/> </>);
+                            return (<> <ListItemLink key={route.title} route={route}/>
+                                    <Divider/>
+                                </>
+                            );
                         }
                     )
+
                 }
-
             </List>
-            <div>
-
-            </div>
         </Drawer>);
 };
 

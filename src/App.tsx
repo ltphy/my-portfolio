@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import MainLayout from "./layout";
-import {MemoryRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, MemoryRouter, Route, Switch} from 'react-router-dom';
 import {IRouter, routes} from "./constants/routes.constant";
 import {DrawerToggleProvider} from "./context/DrawerOpenProvider/drawerOpenProvider.context";
 
@@ -54,6 +54,7 @@ interface AppState {
 class App extends React.Component<AppProps, AppState> {
     constructor(props: AppProps) {
         super(props);
+        // toggle open
         const toggleOpen = (open: boolean) => {
             this.setState({open: open});
         };
@@ -70,7 +71,7 @@ class App extends React.Component<AppProps, AppState> {
                     routes.map((route: IRouter, index: number) => {
                         return (
                             <Route path={route.path}
-                                   exact={route.path === '/'}
+                                   exact={route.exact}
                                    key={route.title}
                                    render={() => <route.component/>}
                             />
@@ -83,13 +84,13 @@ class App extends React.Component<AppProps, AppState> {
 
     render() {
         return (
-            <MemoryRouter initialEntries={[routes[0].path]} initialIndex={0}>
+            <BrowserRouter>
                 <DrawerToggleProvider drawerToggle={this.state}>
                     <MainLayout>
                         <this.RenderMainRoute/>
                     </MainLayout>
                 </DrawerToggleProvider>
-            </MemoryRouter>
+            </BrowserRouter>
 
         );
     }

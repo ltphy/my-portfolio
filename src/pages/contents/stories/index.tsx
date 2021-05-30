@@ -5,6 +5,7 @@ import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import {Col, Row} from "react-bootstrap";
 import {fields} from "./stories.constants";
 import {typeSpeed} from "../../../constants/default_constants";
+import { withRouter } from "react-router-dom";
 
 const Stories = () => {
     //will render
@@ -60,4 +61,4 @@ const Stories = () => {
         </div>
     </Row>);
 };
-export default Stories;
+export default withRouter(Stories);

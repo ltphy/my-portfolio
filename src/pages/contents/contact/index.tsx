@@ -6,6 +6,7 @@ import {Divider, Paper} from "@material-ui/core";
 import ContactForm from "./contact_form/contact_form";
 import ContactLinks from "./contact_links";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import {withRouter} from "react-router";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -22,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
     },
     contentWrapper: {
         padding: '80px',
-        boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
-        background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-        color: "white"
     },
     title: {
         fontWeight: 'bold'
@@ -35,6 +33,9 @@ const Contact = () => {
 
     const theme = useThemeContext();
     const classes = useStyles();
+    const changeDate = () => {
+
+    };
     return (<div className={classes.contentWrapper}>
         <h1 className={classes.title}> Get in Touch</h1>
         <h3 className={classes.title}>Contact me</h3>
@@ -80,6 +81,9 @@ const Contact = () => {
 
 
         <ContactLinks/>
+        <div>
+
+        </div>
     </div>);
 };
-export default Contact;
+export default withRouter(Contact);
