@@ -30,7 +30,19 @@ const useStyles = makeStyles((theme) => ({
         padding: '80px',
     },
     titleWrapper: {
-        textAlign: 'center'
+        textAlign: 'center',
+        '& > *': {
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+
+            '&:first-child': {
+                fontSize: '3rem',
+            },
+            '&:not(:first-child)': {
+                marginBottom: '12px',
+                padding: '5px 8px',
+            }
+        }
     },
     title: {
         fontWeight: 'bold',
@@ -346,12 +358,13 @@ const About = () => {
     // };
     return (<div className={classes.contentWrapper}>
         <div className={classes.titleWrapper}>
-            <h1 className={classes.title}>
-                RESUME
-            </h1>
             <div>
                 <Face fontSize={'large'}/>
             </div>
+            <h1>
+                RESUME
+            </h1>
+
         </div>
         <div className={classes.content}>
             <Grid container>

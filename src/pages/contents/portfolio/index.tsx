@@ -1,4 +1,1 @@
-const Portfolio = () => {
-
-};
-export default Portfolio;
+export * from './portfolio';
