@@ -1,6 +1,6 @@
 import {PortfolioTitle} from "../portfolio.interfaces";
 
-export interface Portfolio {
+export interface PortfolioContent {
     title: string;
     subTitle: string;
     image: string;
