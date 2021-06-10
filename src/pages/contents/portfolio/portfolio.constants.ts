@@ -4,7 +4,7 @@ import {PortfolioTitle} from "./portfolio.interfaces";
 export const portfolioList: PortfolioContent[] = [
     {
         title: 'My Portfolio',
-        subTitle: 'Portfolio website to present my working progress.',
+        subTitle: 'Portfolio website to track my working progress.',
         image: '/images/portfolio.gif',
         category: PortfolioTitle.Web,
         url: ''
