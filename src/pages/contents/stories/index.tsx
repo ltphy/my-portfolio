@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import styles from "./styles.module.scss";
-import phy from '../../../resources/phy.jpg'
 import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import {Col, Row} from "react-bootstrap";
 import {fields} from "./stories.constants";

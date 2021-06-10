@@ -1,8 +1,9 @@
 import Stories from "../pages/contents/stories";
 import About from "../pages/contents/about";
-import {Face, HomeOutlined, PhoneAndroid} from '@material-ui/icons/';
+import {Face, HomeOutlined, PhoneAndroid, WorkOutline} from '@material-ui/icons/';
 import React from "react";
 import Contact from "../pages/contents/contact";
+import Portfolio from "../pages/contents/portfolio/portfolio";
 
 export interface IRouter {
     component: any;
@@ -37,6 +38,17 @@ export const routes: IRouter[] = [
         path: "/about",
         exact: true
 
+    },
+    {
+        component: Portfolio,
+        iconRender: () => {
+            return (<WorkOutline/>);
+        },
+        isPrivate: false,
+        title: "PORTFOLIO",
+        showHeaderNavBar: true,
+        path: "/portfolio",
+        exact: true
     },
     {
         component: Contact,

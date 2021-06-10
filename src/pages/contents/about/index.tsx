@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from "react";
+import React from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import {CloudDownloadOutlined, CloudUploadOutlined, Face} from "@material-ui/icons";
-import {Grid, Typography, withStyles, Button, Input} from "@material-ui/core";
+import {CloudDownloadOutlined, Face} from "@material-ui/icons";
+import {Button, Grid, Typography, withStyles} from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 
@@ -14,7 +14,6 @@ import {
     TimelineSeparator
 } from "@material-ui/lab";
 import {withRouter} from "react-router";
-import TextArea from "antd/lib/input/TextArea";
 import {downloadURL} from "./about.interfaces";
 
 const TimelineItem = withStyles({
@@ -30,7 +29,19 @@ const useStyles = makeStyles((theme) => ({
         padding: '80px',
     },
     titleWrapper: {
-        textAlign: 'center'
+        textAlign: 'center',
+        '& > *': {
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+
+            '&:first-child': {
+                fontSize: '3rem',
+            },
+            '&:not(:first-child)': {
+                marginBottom: '12px',
+                padding: '5px 8px',
+            }
+        }
     },
     title: {
         fontWeight: 'bold',
@@ -327,31 +338,15 @@ const About = () => {
             </div>);
     };
 
-    // useEffect(() => {
-    //     if (inputListDivRef.current) {
-    //         inputListDivRef.current.scrollTop = inputListDivRef.current.scrollHeight;
-    //     }
-    // }, [optionsList.length]);
-    //
-    // const scrollToBottom = () => {
-    //     if (inputListDivRef.current) {
-    //         const scrollHeight = inputListDivRef.current.scrollHeight;
-    //         const height = inputListDivRef.current.clientHeight;
-    //         console.log('scrollHeight');
-    //         console.log(height);
-    //         console.log(scrollHeight);
-    //         // if new
-    //     }
-    //
-    // };
     return (<div className={classes.contentWrapper}>
         <div className={classes.titleWrapper}>
-            <h1 className={classes.title}>
-                RESUME
-            </h1>
             <div>
                 <Face fontSize={'large'}/>
             </div>
+            <h1>
+                RESUME
+            </h1>
+
         </div>
         <div className={classes.content}>
             <Grid container>
