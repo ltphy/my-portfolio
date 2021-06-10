@@ -3,45 +3,24 @@ import {PortfolioTitle} from "./portfolio.interfaces";
 
 export const portfolioList: PortfolioContent[] = [
     {
-        title: 'OpenPCDet1',
-        subTitle: 'Contribute to an opensource project',
-        image: 'https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg',
-        category: PortfolioTitle.DeepLearning
+        title: 'My Portfolio',
+        subTitle: 'Portfolio website to present my working progress.',
+        image: '/images/portfolio.gif',
+        category: PortfolioTitle.Web,
+        url: ''
     },
     {
-        title: 'OpenPCDet2',
-        subTitle: 'Contribute to an opensource project',
-        image: 'https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg',
-        category: PortfolioTitle.DeepLearning
+        title: 'OpenPCDet',
+        subTitle: 'Contribute to an open-source research project.',
+        image: '/images/deeplearning_contribute.png',
+        category: PortfolioTitle.DeepLearning,
+        url: 'https://github.com/open-mmlab/OpenPCDet'
     },
     {
-        title: 'OpenPCDet3',
-        subTitle: 'Contribute to an opensource project',
-        image: 'https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg',
-        category: PortfolioTitle.Mobile
+        title: 'Garbage Collector',
+        subTitle: 'A AI Game using Teachable Machine and Unity.',
+        image: '/images/game.gif',
+        category: PortfolioTitle.All,
+        url: 'https://medium.com/@phylieng97/create-machine-learning-game-by-joining-jstensorflow-and-unity-together-using-websocket-ca00982bca46'
     },
-    {
-        title: 'OpenPCDet4',
-        subTitle: 'Contribute to an opensource project',
-        image: 'https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg',
-        category: PortfolioTitle.Web
-    },
-    {
-        title: 'OpenPCDet5',
-        subTitle: 'Contribute to an opensource project',
-        image: 'https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg',
-        category: PortfolioTitle.DeepLearning
-    },
-    {
-        title: 'OpenPCDet6',
-        subTitle: 'Contribute to an opensource project',
-        image: 'https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg',
-        category: PortfolioTitle.DeepLearning
-    },
-    {
-        title: 'OpenPCDet7',
-        subTitle: 'Contribute to an opensource project',
-        image: 'https://www.freecodecamp.org/news/content/images/2020/04/w-qjCHPZbeXCQ-unsplash.jpg',
-        category: PortfolioTitle.DeepLearning
-    }
 ];

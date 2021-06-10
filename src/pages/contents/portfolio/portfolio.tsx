@@ -57,8 +57,12 @@ const useStyles = makeStyles((theme) => ({
     },
     itemWrapper: {
         padding: '1%'
+    },
+    buttonFilter: {
+        '&:focus': {
+            borderColor: 'transparent'
+        }
     }
-
 }));
 const Portfolio = () => {
     const classes = useStyles();
@@ -102,7 +106,10 @@ const Portfolio = () => {
         <div>
             <div className={classes.filterPortfolio}>
                 {Object.values(PortfolioTitle).map((value) => {
-                    return <Button variant={selected === value ? "contained" : "text"} key={value} color='primary'
+                    return <Button variant={selected === value ? "contained" : "text"}
+                                   key={value}
+                                   color='primary'
+                                   className={classes.buttonFilter}
                                    onClick={() => onClickFilterButton(value)}>{value}</Button>
                 })}
             </div>

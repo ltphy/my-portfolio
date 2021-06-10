@@ -1,10 +1,10 @@
 import {makeStyles, Card, CardActionArea, CardMedia, CardContent, Typography} from "@material-ui/core";
 import React from "react";
-import {MergeType} from "@material-ui/icons";
-import {Portfolio} from "./PortfolioCard.interfaces";
+import {PortfolioContent} from "./PortfolioCard.interfaces";
+import {Link} from 'react-router-dom';
 
 interface PortfolioCardProps {
-    portfolio: Portfolio;
+    portfolio: PortfolioContent;
 }
 
 const useStyles = makeStyles({
@@ -17,30 +17,34 @@ const useStyles = makeStyles({
 
 });
 export const PortfolioCard = ({portfolio}: PortfolioCardProps) => {
-    const {title, subTitle, image, category} = portfolio;
+    const {title, subTitle, image, category, url} = portfolio;
     const classes = useStyles();
     const onMouseOverPortfolio = (evcnt: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
 
     };
 
-    return (
-        <Card className={classes.card} onMouseOver={onMouseOverPortfolio} elevation={3}>
-            <CardActionArea>
-                <CardMedia
-                    className={classes.imageContent}
-                    title={title}
-                    image={image}
-                />
-                <CardContent>
-                    <Typography gutterBottom>
-                        {title}
-                    </Typography>
 
-                    <Typography>
-                        {subTitle}
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+    return (
+        <Link to={{pathname: url}} target='_blank'>
+            <Card className={classes.card} onMouseOver={onMouseOverPortfolio} elevation={3}>
+                <CardActionArea>
+
+                    <CardMedia
+                        className={classes.imageContent}
+                        title={title}
+                        image={image}
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h5">
+                            {title}
+                        </Typography>
+                        <Typography variant="body1" color="textSecondary" component="p">
+                            {subTitle}
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
+        </Link>
+
     );
 };

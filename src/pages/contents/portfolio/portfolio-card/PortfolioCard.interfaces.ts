@@ -5,4 +5,5 @@ export interface PortfolioContent {
     subTitle: string;
     image: string;
     category: PortfolioTitle;
+    url?: string;
 }
