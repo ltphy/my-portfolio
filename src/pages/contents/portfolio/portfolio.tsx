@@ -53,7 +53,11 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         alignItems: "center",
         justifyContent: 'flex-start',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        '&.empty': {
+            height: '100vh',
+            alignItems: "flex-start",
+        }
     },
     itemWrapper: {
         padding: '1%'
@@ -62,7 +66,8 @@ const useStyles = makeStyles((theme) => ({
         '&:focus': {
             borderColor: 'transparent'
         }
-    }
+    },
+
 }));
 const Portfolio = () => {
     const classes = useStyles();
@@ -113,7 +118,7 @@ const Portfolio = () => {
                                    onClick={() => onClickFilterButton(value)}>{value}</Button>
                 })}
             </div>
-            <TransitionGroup className={classes.portfolioContainer}>
+            <TransitionGroup className={`${classes.portfolioContainer} ${filterPortfolio.length === 0 ? 'empty' : ''}`}>
                 {renderPortfolioCards()}
             </TransitionGroup>
 
