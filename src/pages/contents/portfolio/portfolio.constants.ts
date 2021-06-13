@@ -10,7 +10,7 @@ export const portfolioList: PortfolioContent[] = [
         subTitle: 'Portfolio website to track my working progress.',
         image: portfolio,
         category: PortfolioTitle.Web,
-        url: ''
+        url: 'https://ltphy.github.io/my-portfolio'
     },
     {
         title: 'OpenPCDet',
