@@ -6,7 +6,6 @@
 .portfolio-enter-active {
     opacity: 1;
     transition: opacity 1000ms ease-in;
-    /*transform: translateX(0);*/
 }
 
 .portfolio-exit {

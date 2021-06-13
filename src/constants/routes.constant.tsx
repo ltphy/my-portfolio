@@ -15,6 +15,7 @@ export interface IRouter {
     exact: boolean,
 }
 
+const defaultRoute = '/my-portfolio'
 export const routes: IRouter[] = [
     {
         component: Stories,
@@ -24,7 +25,7 @@ export const routes: IRouter[] = [
         isPrivate: false,
         title: "HOME",
         showHeaderNavBar: true,
-        path: "/",
+        path: `${defaultRoute}/`,
         exact: true
     },
     {
@@ -35,7 +36,7 @@ export const routes: IRouter[] = [
         isPrivate: false,
         title: "ABOUT",
         showHeaderNavBar: true,
-        path: "/about",
+        path: `${defaultRoute}/about`,
         exact: true
 
     },
@@ -47,7 +48,7 @@ export const routes: IRouter[] = [
         isPrivate: false,
         title: "PORTFOLIO",
         showHeaderNavBar: true,
-        path: "/portfolio",
+        path: `${defaultRoute}/portfolio`,
         exact: true
     },
     {
@@ -58,7 +59,7 @@ export const routes: IRouter[] = [
         isPrivate: false,
         title: "CONTACT",
         showHeaderNavBar: true,
-        path: "/contact",
+        path: `${defaultRoute}/contact`,
         exact: true
     },
 ];
