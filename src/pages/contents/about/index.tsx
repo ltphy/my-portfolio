@@ -185,9 +185,10 @@ const About = () => {
                             <div> ZMP VN Inc.</div>
 
                             <Paper elevation={4} className={classes.paperContent}>
-                                <div className={classes.projectTitle}> ForkApp - 95%
+                                <div className={classes.projectTitle}> ForkApp - 100%
                                 </div>
                                 <p> - A flutter app communicates with Redis Server to command fork lift robots.</p>
+                                <a href={'https://www.youtube.com/watch?v=r6b90N-TZnM&t=31s'}> Link to old app version</a>
                                 <div className={classes.projectTitle}> Deep learning project - 70%
                                 </div>
                                 <div> - 3D Object Detection using point clouds.</div>
