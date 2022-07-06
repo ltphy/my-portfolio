@@ -16,6 +16,7 @@ const Stories = () => {
         return () => {
             setTypeText('');
             timeoutList.forEach((timeout) => clearTimeout(timeout));
+
         };
     }, []);
     const [typeText, setTypeText] = useState<string>('');
