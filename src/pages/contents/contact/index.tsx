@@ -1,13 +1,12 @@
 import React from "react";
-import styles from "./styles.module.scss";
 import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import Grid from '@material-ui/core/Grid';
-import {Divider, Paper} from "@material-ui/core";
+import {Paper} from "@material-ui/core";
 import ContactForm from "./contact_form/contact_form";
 import ContactLinks from "./contact_links";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import {withRouter} from "react-router";
-import {PhoneAndroid, WorkOutline} from "@material-ui/icons";
+import {PhoneAndroid} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
 

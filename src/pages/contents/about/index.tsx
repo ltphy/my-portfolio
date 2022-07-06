@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
             '&:not(:first-child)': {
                 marginBottom: '12px',
                 padding: '5px 8px',
+                width: '20%',
+                margin: 'auto',
+                border: '1px #ffaaff solid',
             }
         }
     },
@@ -47,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold',
         textTransform: 'uppercase',
         marginBottom: '12px',
-        padding: '5px 8px'
     },
+
     content: {
         alignItems: 'center',
         display: 'flex',
@@ -96,6 +99,10 @@ const useStyles = makeStyles((theme) => ({
             }
         },
     },
+    centerText: {
+      display: "flex",
+      justifyContent: 'center'
+    },
     projectSubTitle: {
         fontWeight: 700,
         color: '#0057D9',
@@ -139,13 +146,17 @@ const useStyles = makeStyles((theme) => ({
     },
     scrollWrapper: {},
     downloadWrapper: {
-        marginTop: '3rem',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center'
+        position: 'fixed',
+        bottom: 10,
+        left: '50%',
+        transform: 'translate(-50%, 0)'
     },
-
+    faceCenter: {
+        borderRadius: '15px',
+        width: '100%',
+        height: '100px',
+        border: '1rem #ffff00 thick'
+    }
 }));
 
 const About = () => {
@@ -303,11 +314,13 @@ const About = () => {
 
                 <Paper className={classes.paperContent}>
                     <ul>
-                        <li> Flutter</li>
-                        <li> ReactJS written in TypeScript</li>
-                        <li> Javascript, C++, and Python experience</li>
-                        <li> NodeJS back-end (Auth and Restfull API)</li>
-                        <li> HTML, CSS</li>
+                        <li> Knowledge of Dart, Javascript, Typescript, CSS, HTML</li>
+                        <li> Knowledge of React.js</li>
+                        <li> Knowledge of Flutter</li>
+                        <li> Knowledge of React Native</li>
+                        <li> C++, and Python experience</li>
+                        <li> </li>
+                        <li> Can work with NodeJS - Express as backend</li>
                     </ul>
 
                 </Paper>
@@ -320,20 +333,13 @@ const About = () => {
                     SKILLS</Typography>
                 <Paper className={classes.paperContent}>
                     <ul>
-                        <li> Have fundamental knowledge of Data Structures and Algorithms.</li>
+                        <li> Have knowledge of Data Structures and Algorithms.</li>
                         <li> Detail oriented, team player</li>
                         <li> Problem solver by presenting and understanding the flow of code.</li>
                         <li> Tasks breakdown, product mindset</li>
                         <li> Strong self-learning ability but always eager to ask.</li>
                     </ul>
                 </Paper>
-                <div className={classes.downloadWrapper}>
-                    <Button href={downloadURL} download='cv' variant={'contained'} color="primary"
-                            startIcon={<CloudDownloadOutlined/>}
-                    >
-                        Download CV
-                    </Button>
-                </div>
 
             </div>);
     };
@@ -359,6 +365,13 @@ const About = () => {
                 </Grid>
 
             </Grid>
+        </div>
+        <div className={classes.downloadWrapper}>
+            <Button href={downloadURL} download='cv' variant={'contained'} color="primary" size={'large'}
+                    startIcon={<CloudDownloadOutlined/>}
+            >
+                Download CV
+            </Button>
         </div>
     </div>);
 };
