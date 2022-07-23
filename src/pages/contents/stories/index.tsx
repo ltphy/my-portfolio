@@ -10,15 +10,16 @@ const Stories = () => {
     //will render
     const useTheme = useThemeContext();
     let timeoutList: NodeJS.Timeout[] = [];
+
     useEffect(() => {
         const typeWriterTimeOut = typeWriter(fields[0], fields);
         // typeWriter2();
         return () => {
             setTypeText('');
             timeoutList.forEach((timeout) => clearTimeout(timeout));
-
         };
     }, []);
+
     const [typeText, setTypeText] = useState<string>('');
 
     const typeWriter = (text: string, textFields: string[]) => {
@@ -40,9 +41,7 @@ const Stories = () => {
     };
 
     return (<Row style={useTheme.content}>
-        <div className={styles.my_img}>
-
-        </div>
+        <div className={styles.my_img}/>
         <div className={styles.title_content}>
             <div className={styles.layout_content}>
                 <h4>

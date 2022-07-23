@@ -7,7 +7,6 @@ import {portfolioList} from "./portfolio.constants";
 import {PortfolioCard} from "./portfolio-card/PortfolioCard";
 import {PortfolioContent} from "./portfolio-card/PortfolioCard.interfaces";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import './styles.css';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
