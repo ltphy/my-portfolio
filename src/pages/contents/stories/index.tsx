@@ -1,10 +1,24 @@
 import React, {useEffect, useState} from "react";
-import styles from "./styles.module.scss";
 import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
-import {Col, Row} from "react-bootstrap";
 import {fields} from "./stories.constants";
 import {typeSpeed} from "../../../constants/default_constants";
-import { withRouter } from "react-router-dom";
+import {withRouter} from "react-router-dom";
+import styles from './styles.module.scss';
+
+const images = [
+    {
+        original: 'https://picsum.photos/id/1018/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1018/250/150/',
+    },
+    {
+        original: 'https://picsum.photos/id/1015/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1015/250/150/',
+    },
+    {
+        original: 'https://picsum.photos/id/1019/1000/600/',
+        thumbnail: 'https://picsum.photos/id/1019/250/150/',
+    },
+];
 
 const Stories = () => {
     //will render
@@ -40,8 +54,13 @@ const Stories = () => {
         }
     };
 
-    return (<Row style={useTheme.content}>
-        <div className={styles.my_img}/>
+    return (<div style={useTheme.content}>
+        {/*<div className={{...styles.my_img}}/>*/}
+        <img
+            src={'https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg'}
+            className={styles.my_img}
+        />
+
         <div className={styles.title_content}>
             <div className={styles.layout_content}>
                 <h4>
@@ -58,6 +77,6 @@ const Stories = () => {
                 </h4>
             </div>
         </div>
-    </Row>);
+    </div>);
 };
 export default withRouter(Stories);

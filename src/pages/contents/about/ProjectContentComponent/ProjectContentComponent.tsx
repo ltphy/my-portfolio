@@ -16,11 +16,11 @@ const ProjectContentComponent = (props: ProjectContentComponentProps) => {
 
     const renderContent = (content: string | string[]) => {
         return typeof content === "string" ? <p>{content}</p> : (
-            <p>
+            <div>
                 {content.map((content) => {
-                    return (<div>- {content}</div>);
+                    return (<div key={content}>- {content}</div>);
                 })}
-            </p>
+            </div>
         );
     };
 
@@ -29,7 +29,7 @@ const ProjectContentComponent = (props: ProjectContentComponentProps) => {
         {renderContent(projectContent.content)}
         {
             projectSubContents && projectSubContents.map((projectSubContent) => {
-                return <div>
+                return <div key={projectSubContent.title}>
                     <div className={styles.project_sub_title}>{projectSubContent.title}</div>
                     {renderContent(projectSubContent.content)}
                 </div>

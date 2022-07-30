@@ -1,8 +1,6 @@
 import {PortfolioContent} from "./portfolio-card/PortfolioCard.interfaces";
 import {PortfolioTitle} from "./portfolio.interfaces";
-import portfolio from '../../../resources/portfolio.gif';
-import deeplearning_contribute from '../../../resources/deeplearning_contribute.png';
-import game from '../../../resources/game.gif';
+import { portfolio, deepLearningContribute, game } from "../../../assets";
 
 export const portfolioList: PortfolioContent[] = [
     {
@@ -15,7 +13,7 @@ export const portfolioList: PortfolioContent[] = [
     {
         title: 'OpenPCDet',
         subTitle: 'Contribute to an open-source research project.',
-        image: deeplearning_contribute,
+        image: deepLearningContribute,
         category: PortfolioTitle.DeepLearning,
         url: 'https://github.com/open-mmlab/OpenPCDet'
     },

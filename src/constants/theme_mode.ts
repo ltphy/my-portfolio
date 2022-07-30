@@ -32,7 +32,7 @@ export const lightTheme = {
         fontSize: "16px",
         backgroundColor: "#fff",
         color: "#000",
-        transition: "all 0.25s linear",
+        // transition: "all 0.25s linear",
         fontFamily: "Roboto, sans-serif",
     },
     toggleButton: {
