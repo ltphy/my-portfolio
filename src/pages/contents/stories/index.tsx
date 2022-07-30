@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import {fields} from "./stories.constants";
 import {typeSpeed} from "../../../constants/default_constants";
 import {withRouter} from "react-router-dom";
 import styles from './styles.module.scss';
+import {phy1, phy2, phy3, phy} from '../../../assets';
 
 const images = [
     {
@@ -20,19 +21,48 @@ const images = [
     },
 ];
 
+const imageList = [phy1, phy, phy2, phy3];
+
 const Stories = () => {
     //will render
+    const [currentImageIdx, setCurrentImageIdx] = useState<number>(0);
+
     const useTheme = useThemeContext();
+
     let timeoutList: NodeJS.Timeout[] = [];
+    const useShowImageRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     useEffect(() => {
-        const typeWriterTimeOut = typeWriter(fields[0], fields);
-        // typeWriter2();
+        if (useShowImageRef.current) {
+            clearTimeout(useShowImageRef.current);
+            useShowImageRef.current = null;
+        }
+        useShowImageRef.current = setTimeout(() => {
+            // after rerender
+            const imageIndex = (currentImageIdx + 1) % imageList.length;
+            setCurrentImageIdx(imageIndex);
+        }, 5000);
+        return () => {
+            if (useShowImageRef.current) {
+                clearTimeout(useShowImageRef.current);
+            }
+
+        };
+
+    }, [currentImageIdx]);
+    useEffect(() => {
+        typeWriter(fields[0], fields);
+
         return () => {
             setTypeText('');
             timeoutList.forEach((timeout) => clearTimeout(timeout));
+            if (useShowImageRef.current) {
+                clearTimeout(useShowImageRef.current);
+                useShowImageRef.current = null;
+            }
         };
     }, []);
+
 
     const [typeText, setTypeText] = useState<string>('');
 
@@ -55,26 +85,27 @@ const Stories = () => {
     };
 
     return (<div style={useTheme.content}>
-        {/*<div className={{...styles.my_img}}/>*/}
-        <img
-            src={'https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg'}
-            className={styles.my_img}
-        />
+        <div className={styles.container}>
+            <img
+                src={imageList[currentImageIdx]}
+                className={styles.my_img}
+            />
 
-        <div className={styles.title_content}>
-            <div className={styles.layout_content}>
-                <h4>
-                    Hi, I am
-                </h4>
-                <h2 className={styles.page_title}>
-                    Lieng The Phy
-                </h2>
-                <h4>
-                    I am {' '}
-                    <strong className={styles.typewriter2}>
-                        {typeText}
-                    </strong>
-                </h4>
+            <div className={styles.title_content}>
+                <div className={styles.layout_content}>
+                    <h4>
+                        Hi, I am
+                    </h4>
+                    <h2 className={styles.page_title}>
+                        Lieng The Phy
+                    </h2>
+                    <h4>
+                        I am {' '}
+                        <strong className={styles.typewriter2}>
+                            {typeText}
+                        </strong>
+                    </h4>
+                </div>
             </div>
         </div>
     </div>);
