@@ -1,13 +1,12 @@
 import makeStyles from "@material-ui/core/styles/makeStyles";
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {WorkOutline} from "@material-ui/icons";
-import {Button, Card, Grid} from "@material-ui/core";
+import {Button} from "@material-ui/core";
 import {PortfolioTitle} from "./portfolio.interfaces";
 import {portfolioList} from "./portfolio.constants";
 import {PortfolioCard} from "./portfolio-card/PortfolioCard";
 import {PortfolioContent} from "./portfolio-card/PortfolioCard.interfaces";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import './styles.css';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -29,15 +28,15 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
             fontWeight: 'bold',
             textTransform: 'uppercase',
-
             '&:first-child': {
                 fontSize: '3rem',
             },
-            '&:not(:first-child)': {
-                marginBottom: '12px',
-                padding: '5px 8px',
-            }
+            '&$portfolioTitle': {}
         }
+    },
+    portfolioTitle: {
+        marginBottom: '12px',
+        padding: '5px 8px',
     },
     filterPortfolio: {
         margin: '20px 10px',
@@ -67,8 +66,17 @@ const useStyles = makeStyles((theme) => ({
             borderColor: 'transparent'
         }
     },
+    centerPadding: {
+        backgroundColor: 'red',
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%,-50%)'
+    }
 
 }));
+
+
 const Portfolio = () => {
     const classes = useStyles();
     const [filterPortfolio, setPortfolioList] = useState<PortfolioContent[]>(portfolioList);
@@ -106,7 +114,7 @@ const Portfolio = () => {
             <div>
                 <WorkOutline fontSize="large"/>
             </div>
-            <h1>Portfolio</h1>
+            <h1 className={classes.portfolioTitle}>Portfolio</h1>
         </div>
         <div>
             <div className={classes.filterPortfolio}>

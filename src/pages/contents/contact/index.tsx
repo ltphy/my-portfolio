@@ -45,12 +45,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Contact = () => {
-
-    const theme = useThemeContext();
     const classes = useStyles();
-    const changeDate = () => {
 
-    };
+
     return (<div className={classes.contentWrapper}>
         <div className={classes.titleWrapper}>
             <div>

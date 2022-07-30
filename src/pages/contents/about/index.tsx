@@ -15,6 +15,7 @@ import {
 } from "@material-ui/lab";
 import {withRouter} from "react-router";
 import {downloadURL} from "./about.interfaces";
+import ProjectContentComponent from "./ProjectContentComponent";
 
 const TimelineItem = withStyles({
     missingOppositeContent: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
                 padding: '5px 8px',
                 width: '20%',
                 margin: 'auto',
-                border: '1px #ffaaff solid',
+
             }
         }
     },
@@ -100,8 +101,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     centerText: {
-      display: "flex",
-      justifyContent: 'center'
+        display: "flex",
+        justifyContent: 'center'
     },
     projectSubTitle: {
         fontWeight: 700,
@@ -110,19 +111,15 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '14px',
         marginBottom: '5px'
     },
-
     paperContent: {
         padding: '8px 12px',
-        marginBottom: '8px',
-        marginTop: '8px',
+        margin: '8px 0',
         fontSize: '14px',
         '& div': {
             '&$projectTitle': {
                 fontSize: '15px',
                 fontWeight: 700,
                 color: '#0057D9',
-                '&:not(:first-child)': {marginTop: '10px'}
-
             }
         }
     },
@@ -159,8 +156,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+
 const About = () => {
     const classes = useStyles();
+
 
     const drawTimeLines = () => {
         return (<>
@@ -176,7 +175,6 @@ const About = () => {
                         <Typography className={classes.title} variant={'h5'} component={'h1'}>
                             CODE HISTORY
                         </Typography>
-
                     </TimelineContent>
 
                 </TimelineItem>
@@ -196,33 +194,58 @@ const About = () => {
                             <div> ZMP VN Inc.</div>
 
                             <Paper elevation={4} className={classes.paperContent}>
-                                <div className={classes.projectTitle}> ForkApp - 95%
-                                </div>
-                                <p> - A flutter app communicates with Redis Server to command fork lift robots.</p>
-                                <div className={classes.projectTitle}> Deep learning project - 70%
-                                </div>
-                                <div> - 3D Object Detection using point clouds.</div>
-                                <div> - Modify existing repository for the project's use case and provide a solution
-                                    for real time processing.
-                                </div>
 
-                                <div className={classes.projectTitle}> Zimulator - 30%
-                                </div>
-                                <p>
-                                    - A Reactjs project to simulate XML structure as a config for Gazebo simulator,
-                                    written in Typescript.
-                                </p>
-
-                                <div className={classes.projectTitle}> Other side projects
-                                </div>
-                                <div className={classes.projectSubTitle}>
-                                    ZMapEditor - Reactjs - 5%
-                                </div>
-                                <span> - Using Geojson and Nebula.gl to implement some custom features to draw traffic map.</span>
-                                <div className={classes.projectSubTitle}>
-                                    Taisei project - Reactjs - 1%
-                                </div>
-                                <span> - Create a chat room for different company roles to communicate with each other to register robot.</span>
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Rakuro - 80%',
+                                        content: '- Work as a full stack developer to create a booking robot application'
+                                    }}
+                                    projectSubContents={
+                                        [
+                                            {
+                                                title: 'Frontend: ReactJS',
+                                                content: ['Easy-peasy store state management', 'Antd form design with search, and filtering features']
+                                            },
+                                            {
+                                                title: 'Mobile: React Native',
+                                                content: ['React navigation', 'Implement UI for both Android and iOS', 'Handle state with Observable store']
+                                            },
+                                            {
+                                                title: 'Backend: Restful API, PostgreSQL',
+                                                content: ['Server using Nodejs with Express', 'Implement UI for both Android and iOS', 'Handle state with Observable store']
+                                            },
+                                        ]
+                                    }
+                                />
+                                <ProjectContentComponent projectContent={{
+                                    title: 'ForkApp - 100%',
+                                    content: ['A flutter app communicates with Redis Server to command fork lift robots.']
+                                }}
+                                />
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Deep learning project - 70%',
+                                        content: ['3D Object Detection using point clouds.', 'Modify existing repository for the project\'s use case and provide a solution\n' +
+                                        '                                    for real time processing.']
+                                    }}
+                                />
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Other side projects',
+                                        content: ''
+                                    }}
+                                    projectSubContents={
+                                        [{
+                                            title: 'ZMapEditor - Reactjs - 5%',
+                                            content: ' - Using Geojson and Nebula.gl to implement some custom features to draw traffic map.'
+                                        },
+                                            {
+                                                title: 'Taisei project - Reactjs - 1%',
+                                                content: ' - Create a chat room for different company roles to communicate with each other to register robot.'
+                                            }
+                                        ]
+                                    }
+                                />
 
                             </Paper>
                         </TimelineContent>
@@ -242,20 +265,12 @@ const About = () => {
                             <div> BeeSight Soft Inc.</div>
 
                             <Paper elevation={4} className={classes.paperContent}>
-                                <div className={classes.projectTitle}>
-                                    Projects about face detections and recognitions - 95%
-                                </div>
-
-                                <div>
-                                    - Create a machine learning game by merging jsTensorflow and Unity Game 2D using
-                                    WebSocket.
-                                </div>
-                                <div>
-                                    - Implement face recognition on a Raspberry Pi 3.0.
-                                </div>
-                                <div>
-                                    - Work with Unity and Android to create a Snapchat-lookalike project.
-                                </div>
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Projects about face detections and recognitions - 95%',
+                                        content: ['3D Object Detection using point clouds.', 'Modify existing repository for the project\'s use case and provide a solution for real time processing.', 'Create a machine learning game by merging jsTensorflow and Unity Game 2D using WebSocket.', 'Work with Unity and Android to create a Snapchat-lookalike project.']
+                                    }}
+                                />
                             </Paper>
                         </TimelineContent>
                     </TimelineItem>
@@ -290,10 +305,12 @@ const About = () => {
                         <Typography className={classes.roleTitle}> Computer science student</Typography>
                         <div>HCMUS-University of science</div>
                         <Paper className={classes.paperContent}>
-                            <div className={classes.projectTitle}> Bachelor of Computer Science, 2019</div>
-                            <div> - Graduated with GPA 8.89</div>
-                            <div> - Student of Advanced Program in Computer Science</div>
-                            <div> - IELTS band 6.5</div>
+                            <ProjectContentComponent
+                                projectContent={{
+                                    title: 'Bachelor of Computer Science, 2019',
+                                    content: ['Graduated with GPA 8.89', ' Student of Advanced Program in Computer Science', 'IELTS band 6.5']
+                                }}
+                            />
                         </Paper>
 
                     </TimelineContent>
@@ -309,20 +326,14 @@ const About = () => {
                             gutterBottom
                             className={classes.title}
                             style={{marginTop: '5.3em'}}
-                >Areas of
-                    Expertise</Typography>
-
+                >Areas of Expertise</Typography>
                 <Paper className={classes.paperContent}>
-                    <ul>
-                        <li> Knowledge of Dart, Javascript, Typescript, CSS, HTML</li>
-                        <li> Knowledge of React.js</li>
-                        <li> Knowledge of Flutter</li>
-                        <li> Knowledge of React Native</li>
-                        <li> C++, and Python experience</li>
-                        <li> </li>
-                        <li> Can work with NodeJS - Express as backend</li>
-                    </ul>
-
+                    <ProjectContentComponent
+                        projectContent={{
+                            title: '',
+                            content: ['Knowledge of Dart, Javascript, Typescript, CSS, HTML', 'knowledge of React.js', 'Knowledge of Flutter', 'Knowledge of React Native', 'C++, and Python experience', 'NodeJs - Express and Restful API']
+                        }}
+                    />
                 </Paper>
                 <Typography variant='h5'
                             component={'h1'}
@@ -332,13 +343,12 @@ const About = () => {
                 >WORK
                     SKILLS</Typography>
                 <Paper className={classes.paperContent}>
-                    <ul>
-                        <li> Have knowledge of Data Structures and Algorithms.</li>
-                        <li> Detail oriented, team player</li>
-                        <li> Problem solver by presenting and understanding the flow of code.</li>
-                        <li> Tasks breakdown, product mindset</li>
-                        <li> Strong self-learning ability but always eager to ask.</li>
-                    </ul>
+                    <ProjectContentComponent
+                        projectContent={{
+                            title: '',
+                            content: ['Have knowledge of Data Structures and Algorithms.', 'Detail oriented, team player', 'Problem solver by presenting and understanding the flow of code.', 'Strong self-learning ability but always eager to ask.']
+                        }}
+                    />
                 </Paper>
 
             </div>);

@@ -96,9 +96,9 @@ const CustomDrawer = () => {
             <List>
                 {
                     routes.map((route: IRouter, index: number) => {
-                            return (<> <ListItemLink key={route.title} route={route}/>
+                            return (<div key={route.title}> <ListItemLink  route={route}/>
                                     <Divider/>
-                                </>
+                                </div>
                             );
                         }
                     )
