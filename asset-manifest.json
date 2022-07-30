@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.802a848c.chunk.css",
-    "main.js": "/my-portfolio/static/js/main.a4fd7232.chunk.js",
-    "main.js.map": "/my-portfolio/static/js/main.a4fd7232.chunk.js.map",
+    "main.css": "/my-portfolio/static/css/main.bd881ff7.chunk.css",
+    "main.js": "/my-portfolio/static/js/main.f965cbd1.chunk.js",
+    "main.js.map": "/my-portfolio/static/js/main.f965cbd1.chunk.js.map",
     "runtime-main.js": "/my-portfolio/static/js/runtime-main.968e46f6.js",
     "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.968e46f6.js.map",
     "static/css/2.266846fb.chunk.css": "/my-portfolio/static/css/2.266846fb.chunk.css",
-    "static/js/2.dcd8d0df.chunk.js": "/my-portfolio/static/js/2.dcd8d0df.chunk.js",
-    "static/js/2.dcd8d0df.chunk.js.map": "/my-portfolio/static/js/2.dcd8d0df.chunk.js.map",
+    "static/js/2.b8fef4f9.chunk.js": "/my-portfolio/static/js/2.b8fef4f9.chunk.js",
+    "static/js/2.b8fef4f9.chunk.js.map": "/my-portfolio/static/js/2.b8fef4f9.chunk.js.map",
     "index.html": "/my-portfolio/index.html",
     "static/css/2.266846fb.chunk.css.map": "/my-portfolio/static/css/2.266846fb.chunk.css.map",
-    "static/css/main.802a848c.chunk.css.map": "/my-portfolio/static/css/main.802a848c.chunk.css.map",
-    "static/js/2.dcd8d0df.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.dcd8d0df.chunk.js.LICENSE.txt",
+    "static/css/main.bd881ff7.chunk.css.map": "/my-portfolio/static/css/main.bd881ff7.chunk.css.map",
+    "static/js/2.b8fef4f9.chunk.js.LICENSE.txt": "/my-portfolio/static/js/2.b8fef4f9.chunk.js.LICENSE.txt",
+    "static/media/IMG_1658483535767_1658496775967.a661ca65.jpg": "/my-portfolio/static/media/IMG_1658483535767_1658496775967.a661ca65.jpg",
+    "static/media/IMG_20220724_203126.6be16951.jpg": "/my-portfolio/static/media/IMG_20220724_203126.6be16951.jpg",
     "static/media/deeplearning_contribute.73e4cc8b.png": "/my-portfolio/static/media/deeplearning_contribute.73e4cc8b.png",
     "static/media/game.2416bb55.gif": "/my-portfolio/static/media/game.2416bb55.gif",
-    "static/media/styles.module.scss": "/my-portfolio/static/media/phy.4a466dcc.jpg",
+    "static/media/phy.4a466dcc.jpg": "/my-portfolio/static/media/phy.4a466dcc.jpg",
+    "static/media/phy_3.eb07d8b5.jpg": "/my-portfolio/static/media/phy_3.eb07d8b5.jpg",
     "static/media/portfolio.c997a45a.gif": "/my-portfolio/static/media/portfolio.c997a45a.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.968e46f6.js",
     "static/css/2.266846fb.chunk.css",
-    "static/js/2.dcd8d0df.chunk.js",
-    "static/css/main.802a848c.chunk.css",
-    "static/js/main.a4fd7232.chunk.js"
+    "static/js/2.b8fef4f9.chunk.js",
+    "static/css/main.bd881ff7.chunk.css",
+    "static/js/main.f965cbd1.chunk.js"
   ]
 }
