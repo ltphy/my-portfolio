@@ -1,0 +1,16 @@
+.project_title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0057D9;
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+.project_sub_title {
+  font-weight: 700;
+  color: #0057D9;
+  opacity: 0.8;
+  font-size: 14px;
+  margin-bottom: 5px;
+}

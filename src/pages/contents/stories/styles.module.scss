@@ -1,5 +1,127 @@
-.content_wrapper {
-  .my_img {
-    width: 350px;
+
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.my_img {
+  content: "";
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Preserve aspet ratio */
+  // smallest width is 100%
+  min-width: 90%;
+  margin-top: 7%;
+  margin-left: 7%;
+  // scale the iamge to screen height
+  max-height: 80vh;
+}
+
+.title_content {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background: rgba(73, 92, 95, 0.6);
+
+  .layout_content {
+    padding: 80px 0 150px;
+    text-align: center;
+    bottom: 0;
+    color: white;
+    width: 100%;
+    max-width: 100%;
+    z-index: 100;
+    position: absolute;
+  }
+
+}
+
+.typewrapper {
+  display: flex;
+  justify-content: center;
+
+}
+
+.page_title {
+  font-size: 4em;
+  font-weight: bold;
+  font-family: "Montserrat", serif;
+}
+
+.typewriter2 {
+  font-size: 2em;
+  margin: 0;
+
+  &:after {
+    content: "|";
+    animation: blink 300ms linear infinite alternate;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap; //
+  margin: 0 auto; //
+  letter-spacing: 0.15em; //space between letter
+  animation: typing 3.5s steps(30, end),
+  blink-caret;
+}
+
+// typing effect animation
+@keyframes typing {
+  from {
+    width: 0
+  }
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent
+  }
+  50% {
+    border-color: orange
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

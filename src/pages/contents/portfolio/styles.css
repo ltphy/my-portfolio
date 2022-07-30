@@ -1,0 +1,19 @@
+.portfolio-enter {
+    opacity: 0.01;
+    transform: scale(1);
+}
+
+.portfolio-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+}
+
+.portfolio-exit {
+    opacity: 1;
+}
+
+.portfolio-exit-active {
+    opacity: 0.01;
+    transform: scale(0.8);
+    transition: opacity 1000ms, transform 1000ms;
+}
