@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 import {ThemeProvider, useTheme, createTheme, Theme} from '@mui/material/styles';
 import clsx from 'clsx';
 import {useDrawerToggleContext} from "../context/DrawerOpenProvider/drawerOpenProvider.context";
-import CustomDrawer from "../components/custom_drawer/custom_drawer";
+import {CustomDrawer} from "../components/custom_drawer/custom_drawer";
 import style from './styles.module.scss';
 import MainLayoutContent from "./MainLayoutContent";
 

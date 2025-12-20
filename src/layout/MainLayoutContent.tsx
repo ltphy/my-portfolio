@@ -1,12 +1,12 @@
 import {makeStyles} from "@mui/styles";
 import {Theme} from "@mui/material/styles";
 import {useState} from "react";
-import { useDrawerToggleContext } from "../context/DrawerOpenProvider/drawerOpenProvider.context";
+import {useDrawerToggleContext} from "../context/DrawerOpenProvider/drawerOpenProvider.context";
 import Header from "./header";
 import React from "react";
 import {HashContextProvider, HashValue} from "../context/hash.context";
 import clsx from "clsx";
-import CustomDrawer from "../components/custom_drawer/custom_drawer";
+import {CustomDrawer} from "../components/custom_drawer/custom_drawer";
 import style from "./styles.module.scss";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         marginLeft: 0,
     },
 }));
+
 interface layoutProps {
     children: any;
 }

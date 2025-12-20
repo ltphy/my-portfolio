@@ -1,32 +1,38 @@
-import React, {useContext} from "react";
-import {lightTheme, Theme} from "../../constants/theme_mode";
+import {createContext, ReactNode, useContext, useState} from "react";
+import React from "react";
 
 export interface DrawerToggle {
     open: boolean;
     toggleOpen: (open: boolean) => void;
 }
 
-// init drwer toggle context
-export const DrawerToggleContext: React.Context<DrawerToggle> = React.createContext<DrawerToggle>({
-    open: false,
-    toggleOpen: (open) => {
-    }
-});
+// Create context with undefined initial value
+export const DrawerToggleContext = createContext<DrawerToggle | undefined>(undefined);
 
 interface DrawerToggleProps {
-    children: any;
-    drawerToggle: DrawerToggle;
+    children: ReactNode;
 }
 
 export const DrawerToggleProvider = (props: DrawerToggleProps) => {
+    // State lives INSIDE the provider
+    const [open, setOpen] = useState(false);
+
+    const value: DrawerToggle = {
+        open,
+        toggleOpen: setOpen,
+    };
+
     return (
-        <DrawerToggleContext.Provider value={props.drawerToggle}>
+        <DrawerToggleContext.Provider value={value}>
             {props.children}
         </DrawerToggleContext.Provider>
     );
 };
 
 export const useDrawerToggleContext = () => {
-    return useContext<DrawerToggle>(DrawerToggleContext);
+    const context = useContext(DrawerToggleContext);
+    if (context === undefined) {
+        throw new Error('useDrawerToggleContext must be used within DrawerToggleProvider');
+    }
+    return context;
 };
-

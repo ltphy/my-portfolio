@@ -6,20 +6,9 @@ import { IRouter, routes } from "./constants/routes.constant";
 import { DrawerToggleProvider } from "./context/DrawerOpenProvider/drawerOpenProvider.context";
 
 const App = () => {
-    const [open, setOpen] = useState(false);
-
-    const toggleOpen = (open: boolean) => {
-        setOpen(open);
-    };
-
-    const drawerToggle = {
-        open,
-        toggleOpen,
-    };
-
     return (
         <BrowserRouter>
-            <DrawerToggleProvider drawerToggle={drawerToggle}>
+            <DrawerToggleProvider>
                 <MainLayout>
                     <Routes>
                         {routes.map((route: IRouter) => (
