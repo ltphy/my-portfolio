@@ -1,6 +1,6 @@
 import Stories from "../pages/contents/stories";
 import About from "../pages/contents/about";
-import {Face, HomeOutlined, PhoneAndroid, WorkOutline} from '@material-ui/icons/';
+import {Face, HomeOutlined, PhoneAndroid, WorkOutline} from '@mui/icons-material';
 import React from "react";
 import Contact from "../pages/contents/contact";
 import Portfolio from "../pages/contents/portfolio/portfolio";

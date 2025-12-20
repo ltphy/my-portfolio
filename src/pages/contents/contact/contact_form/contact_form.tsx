@@ -1,15 +1,15 @@
 import React, {useEffect, useRef, useState} from 'react';
 import useContactForm from '../../../../context/UseContactForm/useContactForm.context';
-import {Button, CircularProgress, makeStyles, Snackbar} from "@material-ui/core";
+import {Button, CircularProgress, Snackbar, Paper} from "@mui/material";
+import { makeStyles } from '@mui/styles';
 import CustomTextField from "../../../../components/custom_text_field/custom_text_field";
-import {Send} from '@material-ui/icons';
-import Paper from "@material-ui/core/Paper";
-import {green} from '@material-ui/core/colors';
+import {Send} from '@mui/icons-material';
+import {green} from '@mui/material/colors';
 import {serviceID, templateID, userID} from '../../../../constants/default_constants';
 import emailjs from 'emailjs-com';
 import {CustomAlert} from "../../../../components/custom_alert/custom_alert";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
 
     buttonWrapper: {
         margin: theme.spacing(1),
@@ -20,9 +20,18 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative',
     },
     sendButton: {
-        boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
-        background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-        color: "white"
+        boxShadow: '0 4px 14px 0 rgba(99, 102, 241, 0.4)',
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        color: "white",
+        borderRadius: '8px',
+        textTransform: 'none',
+        fontWeight: 600,
+        padding: '10px 24px',
+        transition: 'all 0.3s ease',
+        '&:hover': {
+            transform: 'translateY(-2px)',
+            boxShadow: '0 6px 20px 0 rgba(99, 102, 241, 0.5)',
+        }
     },
     paper: {
         padding: theme.spacing(1),
@@ -59,7 +68,7 @@ const ContactForm = () => {
             const value = await emailjs.send(serviceID, templateID, formValues);
             setSuccessAlert(true);
 
-        } catch (error) {
+        } catch (error: any) {
             setErrorAlert(true);
             console.log(error.text);
         }

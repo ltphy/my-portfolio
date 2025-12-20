@@ -1,14 +1,12 @@
 import React from "react";
 import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
-import Grid from '@material-ui/core/Grid';
-import {Paper} from "@material-ui/core";
+import { Grid, Paper } from '@mui/material';
 import ContactForm from "./contact_form/contact_form";
 import ContactLinks from "./contact_links";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import {withRouter} from "react-router";
-import {PhoneAndroid} from "@material-ui/icons";
+import { makeStyles } from '@mui/styles';
+import {PhoneAndroid} from "@mui/icons-material";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
 
     paper: {
         padding: theme.spacing(2),
@@ -104,4 +102,4 @@ const Contact = () => {
         </div>
     </div>);
 };
-export default withRouter(Contact);
+export default Contact;

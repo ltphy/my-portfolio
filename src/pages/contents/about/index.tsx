@@ -1,31 +1,19 @@
 import React from "react";
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import {CloudDownloadOutlined, Face} from "@material-ui/icons";
-import {Button, Grid, Typography, withStyles} from "@material-ui/core";
-import Paper from "@material-ui/core/Paper";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-
+import { makeStyles } from '@mui/styles';
+import {CloudDownloadOutlined, Face, LaptopMac as LaptopMacIcon} from "@mui/icons-material";
+import {Button, Grid, Typography, Paper} from "@mui/material";
 import {
     Timeline,
     TimelineConnector,
     TimelineContent,
     TimelineDot,
-    TimelineItem as MuiTimelineItem,
+    TimelineItem,
     TimelineSeparator
-} from "@material-ui/lab";
-import {withRouter} from "react-router";
+} from "@mui/lab";
 import {downloadURL} from "./about.interfaces";
 import ProjectContentComponent from "./ProjectContentComponent";
 
-const TimelineItem = withStyles({
-    missingOppositeContent: {
-        "&:before": {
-            display: "none"
-        }
-    }
-})(MuiTimelineItem);
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
     contentWrapper: {
         padding: '80px',
     },
@@ -67,7 +55,8 @@ const useStyles = makeStyles((theme) => ({
         background: 'white'
     },
     timelineDotCurrent: {
-        background: '#0057D9'
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        boxShadow: '0 4px 14px 0 rgba(99, 102, 241, 0.4)',
     },
     timelineConnector: {
         color: 'white',
@@ -125,7 +114,8 @@ const useStyles = makeStyles((theme) => ({
     },
     projectTitle: {},
     iconSection: {
-        backgroundColor: '#0057D9'
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        boxShadow: '0 4px 14px 0 rgba(99, 102, 241, 0.3)',
     },
     roleTitle: {
         textTransform: 'uppercase',
@@ -385,4 +375,4 @@ const About = () => {
         </div>
     </div>);
 };
-export default withRouter(About);
+export default About;

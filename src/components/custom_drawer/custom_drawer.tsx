@@ -1,21 +1,15 @@
 import React from "react";
-import Drawer from '@material-ui/core/Drawer';
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import { Drawer, IconButton, ListItemIcon, Divider, List, ListItem, ListItemText } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import {drawerWidth} from "../../constants/default_constants";
 import {useDrawerToggleContext} from "../../context/DrawerOpenProvider/drawerOpenProvider.context";
-import {IconButton, ListItemIcon} from "@material-ui/core";
-import {ChevronLeftOutlined} from "@material-ui/icons";
-import Divider from "@material-ui/core/Divider";
-import List from "@material-ui/core/List";
+import {ChevronLeftOutlined} from "@mui/icons-material";
 import {IRouter, routes} from "../../constants/routes.constant";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import clsx from "clsx";
-import MailIcon from "@material-ui/icons/Mail";
+import MailIcon from "@mui/icons-material/Mail";
 import ListItemLink from "./list_item_link/list_item_link";
-import {Switch} from "react-router";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
     drawer: {
         width: drawerWidth,
         flexShrink: 0,
