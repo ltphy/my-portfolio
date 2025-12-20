@@ -2,11 +2,12 @@ import React, {useRef, useState} from 'react';
 import Header from './header';
 import {HashContextProvider, HashValue} from "../context/hash.context";
 import { makeStyles } from '@mui/styles';
-import { ThemeProvider, useTheme, createTheme } from '@mui/material/styles';
+import {ThemeProvider, useTheme, createTheme, Theme} from '@mui/material/styles';
 import clsx from 'clsx';
 import {useDrawerToggleContext} from "../context/DrawerOpenProvider/drawerOpenProvider.context";
 import CustomDrawer from "../components/custom_drawer/custom_drawer";
 import style from './styles.module.scss';
+import MainLayoutContent from "./MainLayoutContent";
 
 const theme = createTheme({
     palette: {
@@ -56,56 +57,19 @@ const theme = createTheme({
         '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
         ...Array(18).fill('0 25px 50px -12px rgba(0, 0, 0, 0.25)'),
     ] as any,
+    spacing: 8,
 });
 
 interface layoutProps {
     children: any;
 }
 
-const useStyles = makeStyles((theme: any) => ({
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(4),
-        transition: theme.transitions.create(['margin', 'transform'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        minHeight: '100vh',
-        color: "white",
-    },
-    contentShift: {
-        transition: theme.transitions.create(['margin', 'transform'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginLeft: 0,
-    },
-}));
 const MainLayout = (props: layoutProps) => {
-    //set context here so that I dont need to pass prop etc
-    const [hashValue, setHashValue] = useState<HashValue>({hashName: ""});
-    const useDrawerToggle = useDrawerToggleContext();
-    const classes = useStyles();
-    // const setHashNavValue = (hashNav: string) => {
-    //     //because this is a new object => and there fore force rerender
-    //     //if use a normal string It wont force rerender because of React
-    //     const newHashValue: HashValue = {hashName: hashNav};
-    //     setHashValue(newHashValue);
-    // };
-
     return (
             <ThemeProvider theme={theme}>
-                <div className={style.root}>
-                    <Header/>
-                    <CustomDrawer/>
-                    <HashContextProvider hashValue={hashValue}>
-                        <main className={clsx(classes.content, {[classes.contentShift]: useDrawerToggle.open})}>
-                            {props.children}
-                        </main>
-
-                    </HashContextProvider>
-                </div>
+                <MainLayoutContent>
+                    {props.children}
+                </MainLayoutContent>
             </ThemeProvider>);
 };
 
