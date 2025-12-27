@@ -49,7 +49,6 @@ export const CustomDrawer = () => {
 
     return (
         <Drawer
-            variant="permanent"
             anchor="left"
             open={open}
             classes={{
@@ -61,7 +60,7 @@ export const CustomDrawer = () => {
             // Remove className prop - it doesn't work on Drawer root
         >
             <div className={classes.toolbar}>
-                <IconButton onClick={() => toggleOpen(false)}>
+                <IconButton onClick={() => toggleOpen(!open)}>
                     <ChevronLeftOutlined/>
                 </IconButton>
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from '@mui/styles';
 import {CloudDownloadOutlined, Face, LaptopMac as LaptopMacIcon} from "@mui/icons-material";
-import {Button, Grid, Typography, Paper} from "@mui/material";
+import {Button, Grid, Typography, Paper, Grid2} from "@mui/material";
 import {
     Timeline,
     TimelineConnector,
@@ -171,79 +171,80 @@ const About = () => {
                 <div className={classes.timelineContent}>
                     <TimelineItem>
                         <TimelineSeparator>
-
                             <TimelineDot className={classes.timelineDotCurrent}/>
                             <TimelineConnector className={classes.timelineConnector}/>
                         </TimelineSeparator>
                         <TimelineContent>
                             <div className={classes.event}>
-                                <h3>Nov 2020 - current</h3>
+                                <h3>July 2024 - Present</h3>
                             </div>
-
-                            <Typography className={classes.roleTitle}>software engineer</Typography>
-                            <div> ZMP VN Inc.</div>
-
+                            <Typography className={classes.roleTitle}>Bridge Software Engineer / Cloud Architect / Product Owner</Typography>
+                            <div>ROBO-HI Inc. (Japan)</div>
                             <Paper elevation={4} className={classes.paperContent}>
-
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'Rakuro - 80%',
-                                        content: '- Work as a full stack developer to create a booking robot application'
-                                    }}
-                                    projectSubContents={
-                                        [
-                                            {
-                                                title: 'Frontend: ReactJS',
-                                                content: ['Easy-peasy store state management', 'Antd form design with search, and filtering features']
-                                            },
-                                            {
-                                                title: 'Mobile: React Native',
-                                                content: ['React navigation', 'Implement UI for both Android and iOS', 'Handle state with Observable store']
-                                            },
-                                            {
-                                                title: 'Backend: Restful API, PostgreSQL',
-                                                content: ['Server using Nodejs with Express', 'Implement UI for both Android and iOS', 'Handle state with Observable store']
-                                            },
-                                        ]
-                                    }
-                                />
-                                <ProjectContentComponent projectContent={{
-                                    title: 'ForkApp - 100%',
-                                    content: ['A flutter app communicates with Redis Server to command fork lift robots.']
-                                }}
-                                />
-                                <ProjectContentComponent
-                                    projectContent={{
-                                        title: 'Deep learning project - 70%',
-                                        content: ['3D Object Detection using point clouds.', 'Modify existing repository for the project\'s use case and provide a solution\n' +
-                                        '                                    for real time processing.']
+                                        title: 'RoboHUB - Robot Integration Platform',
+                                        content: ['Architected robot integration platform connecting robots with facility equipment (elevators, automatic doors, security gates, fire alarms, nurse call, power supply)', 'Designed IoT communication flow using AWS IoT Core for robot-equipment interaction', 'Led migration from AWS IoT Analytics to modern stack (Kinesis Firehose → S3 Parquet → Glue → Athena)', 'Designed AWS Disaster Recovery and Cross-Region Migration (Tokyo → Singapore)', 'Served as bridge between Japan and Vietnam teams, reducing bug reports and ensuring client satisfaction']
                                     }}
                                 />
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'Other side projects',
-                                        content: ''
+                                        title: 'EYECAN & RoboVision - Mobile Applications',
+                                        content: ['Led camera streaming service with ONVIF protocol and PTZ control', 'Reorganized codebase using Domain Driven Design for Android/iOS consistency', 'Developed indoor navigation app using HLOC (Hierarchical Localization) without GPS', 'Designed multi-floor navigation with elevator integration']
                                     }}
-                                    projectSubContents={
-                                        [{
-                                            title: 'ZMapEditor - Reactjs - 5%',
-                                            content: ' - Using Geojson and Nebula.gl to implement some custom features to draw traffic map.'
-                                        },
-                                            {
-                                                title: 'Taisei project - Reactjs - 1%',
-                                                content: ' - Create a chat room for different company roles to communicate with each other to register robot.'
-                                            }
-                                        ]
-                                    }
                                 />
-
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'CarriRo Platform',
+                                        content: ['Maintained on-premises warehouse platform', 'Analyzed TimescaleDB data for robot telemetry investigation']
+                                    }}
+                                />
                             </Paper>
                         </TimelineContent>
                     </TimelineItem>
 
                     <TimelineItem>
                         <TimelineSeparator>
+                            <TimelineDot className={classes.timelineDot}/>
+                            <TimelineConnector className={classes.timelineConnector}/>
+                        </TimelineSeparator>
+                        <TimelineContent>
+                            <div className={classes.event}>
+                                <h3>November 2019 - July 2024</h3>
+                            </div>
+                            <Typography className={classes.roleTitle}>Software Engineer</Typography>
+                            <div>ZMP VIETNAM</div>
+                            <Paper elevation={4} className={classes.paperContent}>
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Eyecan - Backend Lead',
+                                        content: ['Designed backend and indoor navigation algorithms for visually impaired users', 'Built scalable AWS cloud infrastructure with error logging and analytics', 'Developed multiple-path finding algorithms using Express.js and Neo4j graph database']
+                                    }}
+                                />
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Fork Talk - Mobile Developer',
+                                        content: ['Built Flutter application for fork robot control and task scenario management', 'Implemented MVVM architecture with Hive storage and Provider state management', 'Applied Domain-Driven Design for robust extensibility']
+                                    }}
+                                />
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Rakuro - Software Engineer',
+                                        content: ['Maintained robot booking application with pre-determined routes', 'Full-stack development: ReactJS frontend with easy-peasy state management', 'React Native mobile app, Node.js/PostgreSQL backend']
+                                    }}
+                                />
+                                <ProjectContentComponent
+                                    projectContent={{
+                                        title: 'Zimulator - Software Engineer',
+                                        content: ['Developed ReactJS/TypeScript application for Gazebo simulator XML configuration', 'Implemented RESTful APIs with Node.js/Express and MongoDB']
+                                    }}
+                                />
+                            </Paper>
+                        </TimelineContent>
+                    </TimelineItem>
 
+                    <TimelineItem>
+                        <TimelineSeparator>
                             <TimelineDot className={classes.timelineDot}/>
                             <TimelineConnector className={classes.timelineConnector}/>
                         </TimelineSeparator>
@@ -251,14 +252,13 @@ const About = () => {
                             <div className={classes.event}>
                                 <h3>June 2018 - April 2019</h3>
                             </div>
-                            <Typography className={classes.roleTitle}> R&D DEVELOPER </Typography>
-                            <div> BeeSight Soft Inc.</div>
-
+                            <Typography className={classes.roleTitle}>R&D Developer</Typography>
+                            <div>BeeSight Soft Inc. (Vietnam)</div>
                             <Paper elevation={4} className={classes.paperContent}>
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'Projects about face detections and recognitions - 95%',
-                                        content: ['3D Object Detection using point clouds.', 'Modify existing repository for the project\'s use case and provide a solution for real time processing.', 'Create a machine learning game by merging jsTensorflow and Unity Game 2D using WebSocket.', 'Work with Unity and Android to create a Snapchat-lookalike project.']
+                                        title: 'ML & Computer Vision Projects',
+                                        content: ['Developed ML game integrating TensorFlow.js with Unity 2D via WebSocket', 'Implemented face recognition on Raspberry Pi 3.0 platform']
                                     }}
                                 />
                             </Paper>
@@ -290,15 +290,15 @@ const About = () => {
                     </TimelineSeparator>
                     <TimelineContent>
                         <div className={classes.event}>
-                            <h3>June 2018 - April 2019</h3>
+                            <h3>2015 - 2019</h3>
                         </div>
-                        <Typography className={classes.roleTitle}> Computer science student</Typography>
-                        <div>HCMUS-University of science</div>
+                        <Typography className={classes.roleTitle}>Computer Science Student</Typography>
+                        <div>HCMUS - University of Science</div>
                         <Paper className={classes.paperContent}>
                             <ProjectContentComponent
                                 projectContent={{
-                                    title: 'Bachelor of Computer Science, 2019',
-                                    content: ['Graduated with GPA 8.89', ' Student of Advanced Program in Computer Science', 'IELTS band 6.5']
+                                    title: 'Bachelor of Computer Science',
+                                    content: ['GPA: 3.88 (Top 5%)', 'Advanced Program in Computer Science', 'IELTS Band 6.5', 'AWS Certified Solutions Architect - Associate', 'Japanese: Near N2 level']
                                 }}
                             />
                         </Paper>
@@ -316,12 +316,36 @@ const About = () => {
                             gutterBottom
                             className={classes.title}
                             style={{marginTop: '5.3em'}}
-                >Areas of Expertise</Typography>
+                >Technical Skills</Typography>
                 <Paper className={classes.paperContent}>
                     <ProjectContentComponent
                         projectContent={{
-                            title: '',
-                            content: ['Knowledge of Dart, Javascript, Typescript, CSS, HTML', 'knowledge of React.js', 'Knowledge of Flutter', 'Knowledge of React Native', 'C++, and Python experience', 'NodeJs - Express and Restful API']
+                            title: 'Cloud & Infrastructure',
+                            content: ['AWS (IoT Core, Kinesis, Lambda, S3, Glue, Athena, DynamoDB, Cognito, EC2, ECS, RDS)', 'Docker, Kubernetes']
+                        }}
+                    />
+                    <ProjectContentComponent
+                        projectContent={{
+                            title: 'Backend',
+                            content: ['Node.js, Express.js, Python, RESTful API', 'PostgreSQL, Neo4j, MongoDB, Redis, TimescaleDB']
+                        }}
+                    />
+                    <ProjectContentComponent
+                        projectContent={{
+                            title: 'Frontend & Mobile',
+                            content: ['ReactJS, TypeScript, Flutter, React Native', 'Swift/SwiftUI (iOS)']
+                        }}
+                    />
+                    <ProjectContentComponent
+                        projectContent={{
+                            title: 'IoT & Robotics',
+                            content: ['AWS IoT, MQTT', 'Equipment Integration (Elevators, Auto-doors, Security Gates, Fire Alarms)', 'Robot Communication Protocols']
+                        }}
+                    />
+                    <ProjectContentComponent
+                        projectContent={{
+                            title: 'Architecture',
+                            content: ['Domain Driven Design, MVVM, Microservices', 'System Design, Disaster Recovery Planning']
                         }}
                     />
                 </Paper>
@@ -330,13 +354,12 @@ const About = () => {
                             gutterBottom
                             className={classes.title}
                             style={{marginTop: '2.5em'}}
-                >WORK
-                    SKILLS</Typography>
+                >Key Strengths</Typography>
                 <Paper className={classes.paperContent}>
                     <ProjectContentComponent
                         projectContent={{
                             title: '',
-                            content: ['Have knowledge of Data Structures and Algorithms.', 'Detail oriented, team player', 'Problem solver by presenting and understanding the flow of code.', 'Strong self-learning ability but always eager to ask.']
+                            content: ['Bridge Communication: Facilitating technical discussions between Japanese and Vietnamese teams', 'Technical Leadership: Leading distributed teams and mentoring junior developers', 'Problem Solving: Debugging complex distributed systems and designing scalable solutions', 'System Architecture: Designing cloud infrastructure and robot integration platforms']
                         }}
                     />
                 </Paper>
@@ -355,16 +378,16 @@ const About = () => {
 
         </div>
         <div className={classes.content}>
-            <Grid container>
-                <Grid item xs={6}>
+            <Grid2 container>
+                <Grid2 >
                     {drawTimeLines()}
                     {renderEducationTimeline()}
-                </Grid>
-                <Grid item xs={6}>
+                </Grid2>
+                <Grid2>
                     {skillContent()}
-                </Grid>
+                </Grid2>
 
-            </Grid>
+            </Grid2>
         </div>
         <div className={classes.downloadWrapper}>
             <Button href={downloadURL} download='cv' variant={'contained'} color="primary" size={'large'}

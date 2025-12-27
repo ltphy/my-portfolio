@@ -44,7 +44,7 @@ const useStyle = makeStyles((theme: any) => ({
         marginLeft: "auto",
         marginRight: "auto",
         fontWeight: 700,
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: 'whitesmoke',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
