@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from "react";
 import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import {fields} from "./stories.constants";
 import {typeSpeed} from "../../../constants/default_constants";
-import {withRouter} from "react-router-dom";
 import styles from './styles.module.scss';
 import {phy1, phy2, phy3, phy} from '../../../assets';
 
@@ -110,4 +109,4 @@ const Stories = () => {
         </div>
     </div>);
 };
-export default withRouter(Stories);
+export default Stories;

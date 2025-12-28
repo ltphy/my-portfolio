@@ -1,13 +1,12 @@
 import React from 'react';
-import makeStyles from "@material-ui/core/styles/makeStyles";
-import {Theme} from '@material-ui/core/styles/createMuiTheme';
-import Paper from "@material-ui/core/Paper";
-import {IconButton} from "@material-ui/core";
-import {BrightnessMediumOutlined, Facebook, GitHub, LinkedIn, Twitter} from '@material-ui/icons';
+import { makeStyles } from '@mui/styles';
+import { Theme } from '@mui/material/styles';
+import { Paper, IconButton } from "@mui/material";
+import {BrightnessMediumOutlined, Facebook, GitHub, LinkedIn, Twitter} from '@mui/icons-material';
 import { ReactComponent as YourSvg } from './your-svg.svg';
 
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles((theme: any) => ({
     link_wrapper: {
         display: 'contents',
 

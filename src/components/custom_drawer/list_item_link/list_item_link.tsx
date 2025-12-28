@@ -1,7 +1,5 @@
 import React, {forwardRef, useMemo} from 'react';
-import {ListItemIcon} from "@material-ui/core";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItem from "@material-ui/core/ListItem";
+import { ListItemIcon, ListItemText, ListItemButton } from "@mui/material";
 import {Link as RouterLink} from 'react-router-dom';
 import {IRouter} from "../../../constants/routes.constant";
 
@@ -15,14 +13,14 @@ const ListItemLink = (props: ListItemLinkProps) => {
     const {path, iconRender, title} = route;
     // update render Link whenever to change the route
     const renderLink = useMemo(() => {
-        return forwardRef((itemProps, ref: any) => <RouterLink to={{pathname: path}}
+        return forwardRef((itemProps, ref: any) => <RouterLink to={path}
                                                                ref={ref} {...itemProps}/>);
     }, [path]);
     return (
-        <ListItem button component={renderLink}>
+        <ListItemButton component={renderLink}>
             <ListItemIcon> {iconRender()}</ListItemIcon>
             <ListItemText primary={title}/>
-        </ListItem>
+        </ListItemButton>
     );
 };
 export default ListItemLink;

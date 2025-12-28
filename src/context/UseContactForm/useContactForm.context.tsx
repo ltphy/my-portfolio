@@ -25,9 +25,9 @@ const useContactForm = ({sendEmail}: useContactFormProps) => {
         resolver: yupResolver(validationSchema), defaultValues: validationSchema.cast({})
     });
 
-    const onSubmit = useCallback(async (formValues) => {
+    const onSubmit = useCallback(async (formValues: any) => {
         await sendEmail(formValues);
-    }, []);
+    }, [sendEmail]);
 
     return {control, onSubmit: handleSubmit(onSubmit), formState};
 

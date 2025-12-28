@@ -1,36 +1,20 @@
 import React from "react";
-import Drawer from '@material-ui/core/Drawer';
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import {Divider, Drawer, IconButton, List} from '@mui/material';
+import {makeStyles} from '@mui/styles';
 import {drawerWidth} from "../../constants/default_constants";
 import {useDrawerToggleContext} from "../../context/DrawerOpenProvider/drawerOpenProvider.context";
-import {IconButton, ListItemIcon} from "@material-ui/core";
-import {ChevronLeftOutlined} from "@material-ui/icons";
-import Divider from "@material-ui/core/Divider";
-import List from "@material-ui/core/List";
+import {ChevronLeftOutlined} from "@mui/icons-material";
 import {IRouter, routes} from "../../constants/routes.constant";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import clsx from "clsx";
-import MailIcon from "@material-ui/icons/Mail";
 import ListItemLink from "./list_item_link/list_item_link";
-import {Switch} from "react-router";
+import {Theme} from "@mui/material/styles";
+import {Fontface} from "@mui/material/styles/createMixins";
 
-const useStyles = makeStyles((theme) => ({
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-        whiteSpace: "nowrap"
-    },
+const useStyles = makeStyles((theme: Theme) => ({
     drawerPaper: {
         width: drawerWidth,
-    },
-    drawerHeader: {
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-        justifyContent: 'flex-end',
+        whiteSpace: "nowrap",
+        // Add base styles here that apply to both states
     },
     drawerOpen: {
         width: drawerWidth,
@@ -38,74 +22,57 @@ const useStyles = makeStyles((theme) => ({
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.enteringScreen,
         }),
+        overflowX: "hidden",
     },
     drawerClose: {
         transition: theme.transitions.create('width', {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
-        // theme.spacing default 8px x 7 for icon
         width: theme.spacing(7) + 1,
         [theme.breakpoints.up("sm")]: {
             width: theme.spacing(9) + 1
         },
-        // property specifies whether to clip the content, add a scroll bar, or display overflow content of a block-level element.
-
-        overflowX: "hidden"
-
+        overflowX: "hidden",
     },
     toolbar: {
         display: 'flex',
         justifyContent: 'flex-end',
-        alignContent: 'center',
-        padding: theme.spacing(1, 1),
-
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar
+        alignItems: 'center', // Changed from alignContent
+        padding: theme.spacing(0, 1),
+        ...theme.mixins.toolbar,
     }
 }));
-
-const CustomDrawer = () => {
-    const theme = useStyles();
-    const useDrawerToggle = useDrawerToggleContext();
+export const CustomDrawer = () => {
+    const classes = useStyles({} as Fontface);
+    const { open, toggleOpen } = useDrawerToggleContext();
 
     return (
         <Drawer
-            className={clsx(theme.drawer, {
-                [theme.drawerOpen]: useDrawerToggle.open,
-                [theme.drawerClose]: !useDrawerToggle.open
-            })}
+            anchor="left"
+            open={open}
             classes={{
-                paper: clsx({
-                    [theme.drawerOpen]: useDrawerToggle.open,
-                    [theme.drawerClose]: !useDrawerToggle.open,
+                paper: clsx(classes.drawerPaper, {
+                    [classes.drawerOpen]: open,
+                    [classes.drawerClose]: !open,
                 }),
             }}
-            open={useDrawerToggle.open}
-            variant={'permanent'}
-            anchor={'left'}
-
+            // Remove className prop - it doesn't work on Drawer root
         >
-            <div className={theme.toolbar}>
-                <IconButton onClick={() => {
-                    useDrawerToggle.toggleOpen(false);
-                }}>
+            <div className={classes.toolbar}>
+                <IconButton onClick={() => toggleOpen(!open)}>
                     <ChevronLeftOutlined/>
                 </IconButton>
             </div>
+            <Divider />
             <List>
-                {
-                    routes.map((route: IRouter, index: number) => {
-                            return (<div key={route.title}> <ListItemLink  route={route}/>
-                                    <Divider/>
-                                </div>
-                            );
-                        }
-                    )
-
-                }
+                {routes.map((route: IRouter) => (
+                    <div key={route.title}>
+                        <ListItemLink route={route}/>
+                        <Divider/>
+                    </div>
+                ))}
             </List>
-        </Drawer>);
+        </Drawer>
+    );
 };
-
-export default CustomDrawer;

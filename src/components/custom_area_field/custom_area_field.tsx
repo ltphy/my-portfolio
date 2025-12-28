@@ -1,8 +1,10 @@
 import React from 'react';
-import {fade, makeStyles, TextField} from "@material-ui/core";
+import { TextField } from "@mui/material";
+import { alpha } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 import {Control, Controller} from "react-hook-form";
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles((theme: any) => ({
     root: {
         border: '1px solid #e2e2e1',
         overflow: "hidden",
@@ -14,7 +16,7 @@ const useStyle = makeStyles((theme) => ({
         },
         '&$focused': {
             backgroundColor: '#fff',
-            boxShadow: `${fade(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
+            boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 2px`,
             borderColor: theme.palette.primary.main
         }
 
@@ -25,7 +27,7 @@ const useStyle = makeStyles((theme) => ({
 
 interface CustomTextFieldProps {
     name: string;
-    control: Control<Record<string, any>>;
+    control: Control<any>;
     label: string;
 }
 

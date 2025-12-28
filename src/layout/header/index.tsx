@@ -1,41 +1,33 @@
-import React, {useEffect, useState} from 'react';
-import {SwitchClassKey, SwitchProps} from '@material-ui/core/Switch';
-import {useThemeContext} from "../../context/ThemeProvider/theme.context";
-import {AppBar, Toolbar} from "@material-ui/core";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from '@material-ui/icons/Menu';
-import Typography from "@material-ui/core/Typography";
+import React from 'react';
+import {AppBar, IconButton, Toolbar, Typography} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import {useDrawerToggleContext} from "../../context/DrawerOpenProvider/drawerOpenProvider.context";
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import {makeStyles} from '@mui/styles';
 import clsx from 'clsx';
 import {drawerWidth} from "../../constants/default_constants";
-
-interface Styles extends Partial<Record<SwitchClassKey, string>> {
-    focusVisible?: string;
-}
-
-interface Props extends SwitchProps {
-    classes: Styles;
-}
 
 interface HeaderProps {
     changeNavTab?: (hashNavValue: string) => void;
     switchTheme?: (theme: boolean) => void;
 }
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles((theme: any) => ({
     menuButton: {
         marginRight: theme.spacing(2),
-        color: "#000000",
-
+        color: "#6366f1",
+        '&:hover': {
+            backgroundColor: 'rgba(99, 102, 241, 0.04)',
+        }
     },
     hide: {
         display: 'none'
     },
     appBar: {
         backgroundColor: "#ffffff",
+        boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)',
+        backdropFilter: 'blur(8px)',
         zIndex: theme.zIndex.drawer + 1,
-        transition: theme.transitions.create(['margin', 'width'], {
+        transition: theme.transitions.create(['margin', 'width', 'box-shadow'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
@@ -51,9 +43,11 @@ const useStyle = makeStyles((theme) => ({
     headerTitle: {
         marginLeft: "auto",
         marginRight: "auto",
-        fontWeight: 900,
-        color: "#000000",
-
+        fontWeight: 700,
+        background: 'whitesmoke',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
     }
 }));
 const Header = (headerProps: HeaderProps) => {

@@ -1,14 +1,14 @@
-import makeStyles from "@material-ui/core/styles/makeStyles";
+import { makeStyles } from '@mui/styles';
 import React, {useState} from 'react';
-import {WorkOutline} from "@material-ui/icons";
-import {Button} from "@material-ui/core";
+import {WorkOutline} from "@mui/icons-material";
+import {Button} from "@mui/material";
 import {PortfolioTitle} from "./portfolio.interfaces";
 import {portfolioList} from "./portfolio.constants";
 import {PortfolioCard} from "./portfolio-card/PortfolioCard";
 import {PortfolioContent} from "./portfolio-card/PortfolioCard.interfaces";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
     paper: {
         padding: theme.spacing(2),
         textAlign: 'center',
