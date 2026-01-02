@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import MainLayout from "./layout";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { IRouter, routes } from "./constants/routes.constant";
 import { DrawerToggleProvider } from "./context/DrawerOpenProvider/drawerOpenProvider.context";
 
@@ -11,6 +11,8 @@ const App = () => {
             <DrawerToggleProvider>
                 <MainLayout>
                     <Routes>
+                        {/* Redirect root path to about page */}
+                        <Route path="/" element={<Navigate to="/about" replace />} />
                         {routes.map((route: IRouter) => (
                             <Route
                                 key={route.title}

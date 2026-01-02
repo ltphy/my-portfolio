@@ -15,7 +15,13 @@ import ProjectContentComponent from "./ProjectContentComponent";
 
 const useStyles = makeStyles((theme: any) => ({
     contentWrapper: {
-        padding: '80px',
+        padding: '20px',
+        [theme.breakpoints.up('md')]: {
+            padding: '40px',
+        },
+        [theme.breakpoints.up('lg')]: {
+            padding: '80px',
+        },
     },
     titleWrapper: {
         textAlign: 'center',
@@ -42,9 +48,7 @@ const useStyles = makeStyles((theme: any) => ({
     },
 
     content: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'row',
+        marginTop: '40px',
     },
 
     paper: {
@@ -75,18 +79,8 @@ const useStyles = makeStyles((theme: any) => ({
             background: '#0057D9',
             width: 'max-content',
             fontSize: '14px',
-            marginLeft: '30px',
+            marginLeft: '0px',
             boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)',
-
-            '&::before': {
-                content: '""',
-                bottom: '0',
-                position: 'absolute',
-                border: '11px solid #0057D9!important',
-                borderLeftColor: 'transparent !important',
-                display: 'block',
-                marginLeft: '-35px',
-            }
         },
     },
     centerText: {
@@ -312,10 +306,9 @@ const About = () => {
         return (
             <div className={classes.rightContent}>
                 <Typography variant={'h5'}
-                            component={'h1'}
+                            component={'h2'}
                             gutterBottom
                             className={classes.title}
-                            style={{marginTop: '5.3em'}}
                 >Technical Skills</Typography>
                 <Paper className={classes.paperContent}>
                     <ProjectContentComponent
@@ -350,10 +343,10 @@ const About = () => {
                     />
                 </Paper>
                 <Typography variant='h5'
-                            component={'h1'}
+                            component={'h2'}
                             gutterBottom
                             className={classes.title}
-                            style={{marginTop: '2.5em'}}
+                            sx={{ marginTop: 3 }}
                 >Key Strengths</Typography>
                 <Paper className={classes.paperContent}>
                     <ProjectContentComponent
@@ -363,7 +356,6 @@ const About = () => {
                         }}
                     />
                 </Paper>
-
             </div>);
     };
 
@@ -375,18 +367,16 @@ const About = () => {
             <h1>
                 RESUME
             </h1>
-
         </div>
         <div className={classes.content}>
-            <Grid2 container>
-                <Grid2 >
+            <Grid2 container spacing={4}>
+                <Grid2 size={{ xs: 12, md: 8 }}>
                     {drawTimeLines()}
                     {renderEducationTimeline()}
                 </Grid2>
-                <Grid2>
+                <Grid2 size={{ xs: 12, md: 4 }}>
                     {skillContent()}
                 </Grid2>
-
             </Grid2>
         </div>
         <div className={classes.downloadWrapper}>
