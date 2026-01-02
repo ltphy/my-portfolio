@@ -48,8 +48,15 @@ const useStyle = makeStyles((theme: any) => ({
         background: 'whitesmoke',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
-        backgroundClip: 'text',
-    }
+        backgroundClip: 'text'
+    },
+    titleDisplay: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+
 }));
 const Header = (headerProps: HeaderProps) => {
 
@@ -77,45 +84,17 @@ const Header = (headerProps: HeaderProps) => {
                 >
                     <MenuIcon/>
                 </IconButton>
-                <Typography variant={'h5'} noWrap className={theme.headerTitle}>
-                    Lieng The Phy
-                </Typography>
-                <LanguageSwitcher />
+                <div className={theme.titleDisplay}>
+                    <div/>
+                    <Typography variant={'h5'} noWrap className={theme.headerTitle}>
+                        Lieng The Phy
+                    </Typography>
+
+                    <LanguageSwitcher />
+                </div>
+
             </Toolbar>
         </AppBar>
-        // <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper} style={useTheme.navBar}>
-        //     <Container fluid>
-        //         <Col className={styles.brandWrapper}>
-        //             <Navbar.Brand className={styles.brand} style={{"color": useTheme.navBar.color}}>
-        //                 Phy Lieng
-        //             </Navbar.Brand>
-        //         </Col>
-        //         {/*To create a toggle button for nav bar*/}
-        //         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.toggle}>
-        //             Menu <FontAwesomeIcon icon={faBars}/>
-        //         </Navbar.Toggle>
-        //         <Navbar.Collapse id={"responsive-navbar-nav"} className={styles.nav_container}>
-        //             <Nav>
-        //                 {
-        //                     homeRouters.map((route: IHomeRouter, index: number) => {
-        //                         return (
-        //                             route.showHeaderNavBar &&
-        //                             (<Nav.Link className={styles.route} style={{"color": useTheme.navBar.color}}
-        //                                        key={route.title} onClick={() => {
-        //                                 headerProps.changeNavTab(route.title);
-        //                             }}>
-        //                                 {route.title}
-        //                             </Nav.Link>)
-        //                         );
-        //                     })
-        //
-        //                 }
-        //
-        //             </Nav>
-        //         </Navbar.Collapse>
-        //
-        //     </Container>
-        // </Navbar>
     );
 };
 export default Header;
