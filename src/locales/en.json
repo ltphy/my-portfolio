@@ -1,0 +1,150 @@
+{
+  "navigation": {
+    "home": "HOME",
+    "about": "ABOUT",
+    "portfolio": "PORTFOLIO",
+    "contact": "CONTACT"
+  },
+  "about": {
+    "title": "RESUME",
+    "codeHistory": "CODE HISTORY",
+    "educationHistory": "Education history",
+    "technicalSkills": "Technical Skills",
+    "keyStrengths": "Key Strengths",
+    "downloadCV": "Download CV",
+    "roles": {
+      "bridgeEngineer": "Bridge Software Engineer / Cloud Architect / Product Owner",
+      "softwareEngineer": "Software Engineer",
+      "rdDeveloper": "R&D Developer",
+      "computerScienceStudent": "Computer Science Student"
+    },
+    "companies": {
+      "roboHi": "ROBO-HI Inc. (Japan)",
+      "zmpVietnam": "ZMP VIETNAM",
+      "beeSight": "BeeSight Soft Inc. (Vietnam)",
+      "hcmus": "HCMUS - University of Science"
+    },
+    "projects": {
+      "roboHub": {
+        "title": "RoboHUB - Robot Integration Platform",
+        "items": [
+          "Architected robot integration platform connecting robots with facility equipment (elevators, automatic doors, security gates, fire alarms, nurse call, power supply)",
+          "Designed IoT communication flow using AWS IoT Core for robot-equipment interaction",
+          "Led migration from AWS IoT Analytics to modern stack (Kinesis Firehose → S3 Parquet → Glue → Athena)",
+          "Designed AWS Disaster Recovery and Cross-Region Migration (Tokyo → Singapore)",
+          "Served as bridge between Japan and Vietnam teams, reducing bug reports and ensuring client satisfaction"
+        ]
+      },
+      "eyecan": {
+        "title": "EYECAN & RoboVision - Mobile Applications",
+        "items": [
+          "Led camera streaming service with ONVIF protocol and PTZ control",
+          "Reorganized codebase using Domain Driven Design for Android/iOS consistency",
+          "Developed indoor navigation app using HLOC (Hierarchical Localization) without GPS",
+          "Designed multi-floor navigation with elevator integration"
+        ]
+      },
+      "carriro": {
+        "title": "CarriRo Platform",
+        "items": [
+          "Maintained on-premises warehouse platform",
+          "Analyzed TimescaleDB data for robot telemetry investigation"
+        ]
+      },
+      "eyecanBackend": {
+        "title": "Eyecan - Backend Lead",
+        "items": [
+          "Designed backend and indoor navigation algorithms for visually impaired users",
+          "Built scalable AWS cloud infrastructure with error logging and analytics",
+          "Developed multiple-path finding algorithms using Express.js and Neo4j graph database"
+        ]
+      },
+      "forkTalk": {
+        "title": "Fork Talk - Mobile Developer",
+        "items": [
+          "Built Flutter application for fork robot control and task scenario management",
+          "Implemented MVVM architecture with Hive storage and Provider state management",
+          "Applied Domain-Driven Design for robust extensibility"
+        ]
+      },
+      "rakuro": {
+        "title": "Rakuro - Software Engineer",
+        "items": [
+          "Maintained robot booking application with pre-determined routes",
+          "Full-stack development: ReactJS frontend with easy-peasy state management",
+          "React Native mobile app, Node.js/PostgreSQL backend"
+        ]
+      },
+      "zimulator": {
+        "title": "Zimulator - Software Engineer",
+        "items": [
+          "Developed ReactJS/TypeScript application for Gazebo simulator XML configuration",
+          "Implemented RESTful APIs with Node.js/Express and MongoDB"
+        ]
+      },
+      "mlVision": {
+        "title": "ML & Computer Vision Projects",
+        "items": [
+          "Developed ML game integrating TensorFlow.js with Unity 2D via WebSocket",
+          "Implemented face recognition on Raspberry Pi 3.0 platform"
+        ]
+      },
+      "education": {
+        "title": "Bachelor of Computer Science",
+        "items": [
+          "GPA: 3.88 (Top 5%)",
+          "Advanced Program in Computer Science",
+          "IELTS Band 6.5",
+          "AWS Certified Solutions Architect - Associate",
+          "Japanese: Near N2 level"
+        ]
+      }
+    },
+    "skills": {
+      "cloudInfra": {
+        "title": "Cloud & Infrastructure",
+        "items": [
+          "AWS (IoT Core, Kinesis, Lambda, S3, Glue, Athena, DynamoDB, Cognito, EC2, ECS, RDS)",
+          "Docker, Kubernetes"
+        ]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": [
+          "Node.js, Express.js, Python, RESTful API",
+          "PostgreSQL, Neo4j, MongoDB, Redis, TimescaleDB"
+        ]
+      },
+      "frontend": {
+        "title": "Frontend & Mobile",
+        "items": [
+          "ReactJS, TypeScript, Flutter, React Native",
+          "Swift/SwiftUI (iOS)"
+        ]
+      },
+      "iot": {
+        "title": "IoT & Robotics",
+        "items": [
+          "AWS IoT, MQTT",
+          "Equipment Integration (Elevators, Auto-doors, Security Gates, Fire Alarms)",
+          "Robot Communication Protocols"
+        ]
+      },
+      "architecture": {
+        "title": "Architecture",
+        "items": [
+          "Domain Driven Design, MVVM, Microservices",
+          "System Design, Disaster Recovery Planning"
+        ]
+      }
+    },
+    "strengths": {
+      "items": [
+        "Bridge Communication: Facilitating technical discussions between Japanese and Vietnamese teams",
+        "Technical Leadership: Leading distributed teams and mentoring junior developers",
+        "Problem Solving: Debugging complex distributed systems and designing scalable solutions",
+        "System Architecture: Designing cloud infrastructure and robot integration platforms"
+      ]
+    }
+  }
+}

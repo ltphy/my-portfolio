@@ -1,0 +1,150 @@
+{
+  "navigation": {
+    "home": "TRANG CHỦ",
+    "about": "GIỚI THIỆU",
+    "portfolio": "DỰ ÁN",
+    "contact": "LIÊN HỆ"
+  },
+  "about": {
+    "title": "HỒ SƠ",
+    "codeHistory": "KINH NGHIỆM LÀM VIỆC",
+    "educationHistory": "Học vấn",
+    "technicalSkills": "Kỹ năng kỹ thuật",
+    "keyStrengths": "Điểm mạnh chính",
+    "downloadCV": "Tải CV",
+    "roles": {
+      "bridgeEngineer": "Kỹ sư phần mềm Bridge / Kiến trúc sư đám mây / Chủ sản phẩm",
+      "softwareEngineer": "Kỹ sư phần mềm",
+      "rdDeveloper": "Nhà phát triển R&D",
+      "computerScienceStudent": "Sinh viên Khoa học máy tính"
+    },
+    "companies": {
+      "roboHi": "ROBO-HI Inc. (Nhật Bản)",
+      "zmpVietnam": "ZMP VIỆT NAM",
+      "beeSight": "BeeSight Soft Inc. (Việt Nam)",
+      "hcmus": "Trường Đại học Khoa học Tự nhiên - ĐHQG TP.HCM"
+    },
+    "projects": {
+      "roboHub": {
+        "title": "RoboHUB - Nền tảng tích hợp Robot",
+        "items": [
+          "Thiết kế nền tảng tích hợp robot kết nối robot với thiết bị cơ sở vật chất (thang máy, cửa tự động, cổng an ninh, báo cháy, chuông y tá, nguồn điện)",
+          "Thiết kế luồng giao tiếp IoT sử dụng AWS IoT Core cho tương tác robot-thiết bị",
+          "Dẫn đầu việc di chuyển từ AWS IoT Analytics sang stack hiện đại (Kinesis Firehose → S3 Parquet → Glue → Athena)",
+          "Thiết kế Khắc phục thảm họa AWS và Di chuyển liên vùng (Tokyo → Singapore)",
+          "Đóng vai trò cầu nối giữa đội ngũ Nhật Bản và Việt Nam, giảm báo cáo lỗi và đảm bảo sự hài lòng của khách hàng"
+        ]
+      },
+      "eyecan": {
+        "title": "EYECAN & RoboVision - Ứng dụng di động",
+        "items": [
+          "Dẫn đầu dịch vụ truyền camera với giao thức ONVIF và điều khiển PTZ",
+          "Tổ chức lại codebase sử dụng Domain Driven Design để đồng nhất Android/iOS",
+          "Phát triển ứng dụng điều hướng trong nhà sử dụng HLOC (Hierarchical Localization) không cần GPS",
+          "Thiết kế điều hướng đa tầng với tích hợp thang máy"
+        ]
+      },
+      "carriro": {
+        "title": "Nền tảng CarriRo",
+        "items": [
+          "Bảo trì nền tảng kho hàng on-premises",
+          "Phân tích dữ liệu TimescaleDB để điều tra telemetry của robot"
+        ]
+      },
+      "eyecanBackend": {
+        "title": "Eyecan - Trưởng nhóm Backend",
+        "items": [
+          "Thiết kế backend và thuật toán điều hướng trong nhà cho người khiếm thị",
+          "Xây dựng hạ tầng đám mây AWS có khả năng mở rộng với ghi log lỗi và phân tích",
+          "Phát triển thuật toán tìm đường đa đường dẫn sử dụng Express.js và cơ sở dữ liệu đồ thị Neo4j"
+        ]
+      },
+      "forkTalk": {
+        "title": "Fork Talk - Nhà phát triển Mobile",
+        "items": [
+          "Xây dựng ứng dụng Flutter để điều khiển robot fork và quản lý kịch bản tác vụ",
+          "Triển khai kiến trúc MVVM với lưu trữ Hive và quản lý trạng thái Provider",
+          "Áp dụng Domain-Driven Design để mở rộng mạnh mẽ"
+        ]
+      },
+      "rakuro": {
+        "title": "Rakuro - Kỹ sư phần mềm",
+        "items": [
+          "Bảo trì ứng dụng đặt robot với các tuyến đường được xác định trước",
+          "Phát triển full-stack: Frontend ReactJS với quản lý trạng thái easy-peasy",
+          "Ứng dụng mobile React Native, backend Node.js/PostgreSQL"
+        ]
+      },
+      "zimulator": {
+        "title": "Zimulator - Kỹ sư phần mềm",
+        "items": [
+          "Phát triển ứng dụng ReactJS/TypeScript cho cấu hình XML mô phỏng Gazebo",
+          "Triển khai RESTful API với Node.js/Express và MongoDB"
+        ]
+      },
+      "mlVision": {
+        "title": "Dự án ML & Computer Vision",
+        "items": [
+          "Phát triển trò chơi ML tích hợp TensorFlow.js với Unity 2D qua WebSocket",
+          "Triển khai nhận dạng khuôn mặt trên nền tảng Raspberry Pi 3.0"
+        ]
+      },
+      "education": {
+        "title": "Cử nhân Khoa học máy tính",
+        "items": [
+          "GPA: 3.88 (Top 5%)",
+          "Chương trình tiên tiến Khoa học máy tính",
+          "IELTS Band 6.5",
+          "AWS Certified Solutions Architect - Associate",
+          "Tiếng Nhật: Gần cấp độ N2"
+        ]
+      }
+    },
+    "skills": {
+      "cloudInfra": {
+        "title": "Đám mây & Hạ tầng",
+        "items": [
+          "AWS (IoT Core, Kinesis, Lambda, S3, Glue, Athena, DynamoDB, Cognito, EC2, ECS, RDS)",
+          "Docker, Kubernetes"
+        ]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": [
+          "Node.js, Express.js, Python, RESTful API",
+          "PostgreSQL, Neo4j, MongoDB, Redis, TimescaleDB"
+        ]
+      },
+      "frontend": {
+        "title": "Frontend & Mobile",
+        "items": [
+          "ReactJS, TypeScript, Flutter, React Native",
+          "Swift/SwiftUI (iOS)"
+        ]
+      },
+      "iot": {
+        "title": "IoT & Robotics",
+        "items": [
+          "AWS IoT, MQTT",
+          "Tích hợp thiết bị (Thang máy, Cửa tự động, Cổng an ninh, Báo cháy)",
+          "Giao thức truyền thông Robot"
+        ]
+      },
+      "architecture": {
+        "title": "Kiến trúc",
+        "items": [
+          "Domain Driven Design, MVVM, Microservices",
+          "Thiết kế hệ thống, Lập kế hoạch khắc phục thảm họa"
+        ]
+      }
+    },
+    "strengths": {
+      "items": [
+        "Giao tiếp Bridge: Tạo điều kiện cho các cuộc thảo luận kỹ thuật giữa đội ngũ Nhật Bản và Việt Nam",
+        "Lãnh đạo kỹ thuật: Dẫn đầu các đội phân tán và hướng dẫn các nhà phát triển mới",
+        "Giải quyết vấn đề: Gỡ lỗi hệ thống phân tán phức tạp và thiết kế các giải pháp có khả năng mở rộng",
+        "Kiến trúc hệ thống: Thiết kế hạ tầng đám mây và nền tảng tích hợp robot"
+      ]
+    }
+  }
+}

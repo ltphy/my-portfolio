@@ -5,6 +5,7 @@ import {useDrawerToggleContext} from "../../context/DrawerOpenProvider/drawerOpe
 import {makeStyles} from '@mui/styles';
 import clsx from 'clsx';
 import {drawerWidth} from "../../constants/default_constants";
+import LanguageSwitcher from "../../components/LanguageSwitcher";
 
 interface HeaderProps {
     changeNavTab?: (hashNavValue: string) => void;
@@ -79,6 +80,7 @@ const Header = (headerProps: HeaderProps) => {
                 <Typography variant={'h5'} noWrap className={theme.headerTitle}>
                     Lieng The Phy
                 </Typography>
+                <LanguageSwitcher />
             </Toolbar>
         </AppBar>
         // <Navbar expand="lg" sticky={"top"} className={styles.nav_wrapper} style={useTheme.navBar}>

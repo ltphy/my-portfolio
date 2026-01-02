@@ -1,5 +1,5 @@
 import React from "react";
-import {Divider, Drawer, IconButton, List} from '@mui/material';
+import {Divider, Drawer, IconButton, List, Box} from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import {drawerWidth} from "../../constants/default_constants";
 import {useDrawerToggleContext} from "../../context/DrawerOpenProvider/drawerOpenProvider.context";
@@ -9,6 +9,7 @@ import clsx from "clsx";
 import ListItemLink from "./list_item_link/list_item_link";
 import {Theme} from "@mui/material/styles";
 import {Fontface} from "@mui/material/styles/createMixins";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const useStyles = makeStyles((theme: Theme) => ({
     drawerPaper: {
@@ -73,6 +74,9 @@ export const CustomDrawer = () => {
                     </div>
                 ))}
             </List>
+            <Box sx={{ padding: 2, marginTop: 'auto' }}>
+                <LanguageSwitcher />
+            </Box>
         </Drawer>
     );
 };
