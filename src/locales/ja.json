@@ -1,0 +1,150 @@
+{
+  "navigation": {
+    "home": "ホーム",
+    "about": "プロフィール",
+    "portfolio": "ポートフォリオ",
+    "contact": "お問い合わせ"
+  },
+  "about": {
+    "title": "履歴書",
+    "codeHistory": "職務経歴",
+    "educationHistory": "学歴",
+    "technicalSkills": "技術スキル",
+    "keyStrengths": "主な強み",
+    "downloadCV": "履歴書をダウンロード",
+    "roles": {
+      "bridgeEngineer": "ブリッジソフトウェアエンジニア / クラウドアーキテクト / プロダクトオーナー",
+      "softwareEngineer": "ソフトウェアエンジニア",
+      "rdDeveloper": "研究開発エンジニア",
+      "computerScienceStudent": "コンピュータサイエンス学生"
+    },
+    "companies": {
+      "roboHi": "ROBO-HI株式会社（日本）",
+      "zmpVietnam": "ZMP VIETNAM",
+      "beeSight": "BeeSight Soft株式会社（ベトナム）",
+      "hcmus": "ホーチミン市自然科学大学"
+    },
+    "projects": {
+      "roboHub": {
+        "title": "RoboHUB - ロボット統合プラットフォーム",
+        "items": [
+          "ロボットと施設設備（エレベーター、自動ドア、セキュリティゲート、火災警報、ナースコール、電源）を接続する統合プラットフォームを設計",
+          "AWS IoT Coreを使用したロボットと設備間のIoT通信フローを設計",
+          "AWS IoT Analyticsから最新スタック（Kinesis Firehose → S3 Parquet → Glue → Athena）への移行をリード",
+          "AWSディザスタリカバリとクロスリージョン移行（東京 → シンガポール）を設計",
+          "日本とベトナムチーム間のブリッジとして、バグレポートを削減し、クライアント満足度を確保"
+        ]
+      },
+      "eyecan": {
+        "title": "EYECAN & RoboVision - モバイルアプリケーション",
+        "items": [
+          "ONVIFプロトコルとPTZ制御によるカメラストリーミングサービスをリード",
+          "ドメイン駆動設計を使用してAndroid/iOSの一貫性のためにコードベースを再構成",
+          "GPSなしでHLOC（階層的ローカライゼーション）を使用した屋内ナビゲーションアプリを開発",
+          "エレベーター統合による複数階ナビゲーションを設計"
+        ]
+      },
+      "carriro": {
+        "title": "CarriRoプラットフォーム",
+        "items": [
+          "オンプレミス倉庫プラットフォームの保守",
+          "ロボットテレメトリ調査のためのTimescaleDBデータの分析"
+        ]
+      },
+      "eyecanBackend": {
+        "title": "Eyecan - バックエンドリード",
+        "items": [
+          "視覚障害者向けのバックエンドと屋内ナビゲーションアルゴリズムを設計",
+          "エラーログと分析機能を備えたスケーラブルなAWSクラウドインフラを構築",
+          "Express.jsとNeo4jグラフデータベースを使用した複数経路探索アルゴリズムを開発"
+        ]
+      },
+      "forkTalk": {
+        "title": "Fork Talk - モバイル開発者",
+        "items": [
+          "フォークロボット制御とタスクシナリオ管理のためのFlutterアプリケーションを構築",
+          "HiveストレージとProvider状態管理を使用したMVVMアーキテクチャを実装",
+          "堅牢な拡張性のためにドメイン駆動設計を適用"
+        ]
+      },
+      "rakuro": {
+        "title": "Rakuro - ソフトウェアエンジニア",
+        "items": [
+          "事前に決定されたルートを持つロボット予約アプリケーションの保守",
+          "フルスタック開発：easy-peasy状態管理を使用したReactJSフロントエンド",
+          "React Nativeモバイルアプリ、Node.js/PostgreSQLバックエンド"
+        ]
+      },
+      "zimulator": {
+        "title": "Zimulator - ソフトウェアエンジニア",
+        "items": [
+          "GazeboシミュレータXML設定用のReactJS/TypeScriptアプリケーションを開発",
+          "Node.js/ExpressとMongoDBを使用したRESTful APIを実装"
+        ]
+      },
+      "mlVision": {
+        "title": "機械学習 & コンピュータビジョンプロジェクト",
+        "items": [
+          "WebSocketを介してTensorFlow.jsをUnity 2Dと統合したMLゲームを開発",
+          "Raspberry Pi 3.0プラットフォームで顔認識を実装"
+        ]
+      },
+      "education": {
+        "title": "コンピュータサイエンス学士",
+        "items": [
+          "GPA: 3.88（上位5%）",
+          "コンピュータサイエンス上級プログラム",
+          "IELTS バンド6.5",
+          "AWS認定ソリューションアーキテクト - アソシエイト",
+          "日本語：N2レベル相当"
+        ]
+      }
+    },
+    "skills": {
+      "cloudInfra": {
+        "title": "クラウド & インフラストラクチャ",
+        "items": [
+          "AWS (IoT Core, Kinesis, Lambda, S3, Glue, Athena, DynamoDB, Cognito, EC2, ECS, RDS)",
+          "Docker、Kubernetes"
+        ]
+      },
+      "backend": {
+        "title": "バックエンド",
+        "items": [
+          "Node.js、Express.js、Python、RESTful API",
+          "PostgreSQL、Neo4j、MongoDB、Redis、TimescaleDB"
+        ]
+      },
+      "frontend": {
+        "title": "フロントエンド & モバイル",
+        "items": [
+          "ReactJS、TypeScript、Flutter、React Native",
+          "Swift/SwiftUI (iOS)"
+        ]
+      },
+      "iot": {
+        "title": "IoT & ロボティクス",
+        "items": [
+          "AWS IoT、MQTT",
+          "設備統合（エレベーター、自動ドア、セキュリティゲート、火災警報）",
+          "ロボット通信プロトコル"
+        ]
+      },
+      "architecture": {
+        "title": "アーキテクチャ",
+        "items": [
+          "ドメイン駆動設計、MVVM、マイクロサービス",
+          "システム設計、ディザスタリカバリ計画"
+        ]
+      }
+    },
+    "strengths": {
+      "items": [
+        "ブリッジコミュニケーション：日本とベトナムチーム間の技術的な議論を促進",
+        "技術リーダーシップ：分散チームのリードとジュニア開発者のメンタリング",
+        "問題解決：複雑な分散システムのデバッグとスケーラブルなソリューションの設計",
+        "システムアーキテクチャ：クラウドインフラとロボット統合プラットフォームの設計"
+      ]
+    }
+  }
+}

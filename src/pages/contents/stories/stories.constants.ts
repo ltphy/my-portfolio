@@ -1,1 +1,1 @@
-export const fields = ["a software engineer", "a writer", "a knowledge seeker", "a fitness freak", "a manga lover"];
+export const fields = ["a software engineer", "a knowledge seeker", "a believer in God"];

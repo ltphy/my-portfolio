@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from '@mui/styles';
 import {CloudDownloadOutlined, Face, LaptopMac as LaptopMacIcon} from "@mui/icons-material";
 import {Button, Grid, Typography, Paper, Grid2} from "@mui/material";
+import { useTranslation } from 'react-i18next';
 import {
     Timeline,
     TimelineConnector,
@@ -143,6 +144,7 @@ const useStyles = makeStyles((theme: any) => ({
 
 const About = () => {
     const classes = useStyles();
+    const { t } = useTranslation();
 
 
     const drawTimeLines = () => {
@@ -157,7 +159,7 @@ const About = () => {
                     </TimelineSeparator>
                     <TimelineContent>
                         <Typography className={classes.title} variant={'h5'} component={'h1'}>
-                            CODE HISTORY
+                            {t('about.codeHistory')}
                         </Typography>
                     </TimelineContent>
 
@@ -172,25 +174,25 @@ const About = () => {
                             <div className={classes.event}>
                                 <h3>July 2024 - Present</h3>
                             </div>
-                            <Typography className={classes.roleTitle}>Bridge Software Engineer / Cloud Architect / Product Owner</Typography>
-                            <div>ROBO-HI Inc. (Japan)</div>
+                            <Typography className={classes.roleTitle}>{t('about.roles.bridgeEngineer')}</Typography>
+                            <div>{t('about.companies.roboHi')}</div>
                             <Paper elevation={4} className={classes.paperContent}>
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'RoboHUB - Robot Integration Platform',
-                                        content: ['Architected robot integration platform connecting robots with facility equipment (elevators, automatic doors, security gates, fire alarms, nurse call, power supply)', 'Designed IoT communication flow using AWS IoT Core for robot-equipment interaction', 'Led migration from AWS IoT Analytics to modern stack (Kinesis Firehose → S3 Parquet → Glue → Athena)', 'Designed AWS Disaster Recovery and Cross-Region Migration (Tokyo → Singapore)', 'Served as bridge between Japan and Vietnam teams, reducing bug reports and ensuring client satisfaction']
+                                        title: t('about.projects.roboHub.title'),
+                                        content: t('about.projects.roboHub.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'EYECAN & RoboVision - Mobile Applications',
-                                        content: ['Led camera streaming service with ONVIF protocol and PTZ control', 'Reorganized codebase using Domain Driven Design for Android/iOS consistency', 'Developed indoor navigation app using HLOC (Hierarchical Localization) without GPS', 'Designed multi-floor navigation with elevator integration']
+                                        title: t('about.projects.eyecan.title'),
+                                        content: t('about.projects.eyecan.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'CarriRo Platform',
-                                        content: ['Maintained on-premises warehouse platform', 'Analyzed TimescaleDB data for robot telemetry investigation']
+                                        title: t('about.projects.carriro.title'),
+                                        content: t('about.projects.carriro.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                             </Paper>
@@ -206,31 +208,31 @@ const About = () => {
                             <div className={classes.event}>
                                 <h3>November 2019 - July 2024</h3>
                             </div>
-                            <Typography className={classes.roleTitle}>Software Engineer</Typography>
-                            <div>ZMP VIETNAM</div>
+                            <Typography className={classes.roleTitle}>{t('about.roles.softwareEngineer')}</Typography>
+                            <div>{t('about.companies.zmpVietnam')}</div>
                             <Paper elevation={4} className={classes.paperContent}>
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'Eyecan - Backend Lead',
-                                        content: ['Designed backend and indoor navigation algorithms for visually impaired users', 'Built scalable AWS cloud infrastructure with error logging and analytics', 'Developed multiple-path finding algorithms using Express.js and Neo4j graph database']
+                                        title: t('about.projects.eyecanBackend.title'),
+                                        content: t('about.projects.eyecanBackend.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'Fork Talk - Mobile Developer',
-                                        content: ['Built Flutter application for fork robot control and task scenario management', 'Implemented MVVM architecture with Hive storage and Provider state management', 'Applied Domain-Driven Design for robust extensibility']
+                                        title: t('about.projects.forkTalk.title'),
+                                        content: t('about.projects.forkTalk.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'Rakuro - Software Engineer',
-                                        content: ['Maintained robot booking application with pre-determined routes', 'Full-stack development: ReactJS frontend with easy-peasy state management', 'React Native mobile app, Node.js/PostgreSQL backend']
+                                        title: t('about.projects.rakuro.title'),
+                                        content: t('about.projects.rakuro.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'Zimulator - Software Engineer',
-                                        content: ['Developed ReactJS/TypeScript application for Gazebo simulator XML configuration', 'Implemented RESTful APIs with Node.js/Express and MongoDB']
+                                        title: t('about.projects.zimulator.title'),
+                                        content: t('about.projects.zimulator.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                             </Paper>
@@ -246,13 +248,13 @@ const About = () => {
                             <div className={classes.event}>
                                 <h3>June 2018 - April 2019</h3>
                             </div>
-                            <Typography className={classes.roleTitle}>R&D Developer</Typography>
-                            <div>BeeSight Soft Inc. (Vietnam)</div>
+                            <Typography className={classes.roleTitle}>{t('about.roles.rdDeveloper')}</Typography>
+                            <div>{t('about.companies.beeSight')}</div>
                             <Paper elevation={4} className={classes.paperContent}>
                                 <ProjectContentComponent
                                     projectContent={{
-                                        title: 'ML & Computer Vision Projects',
-                                        content: ['Developed ML game integrating TensorFlow.js with Unity 2D via WebSocket', 'Implemented face recognition on Raspberry Pi 3.0 platform']
+                                        title: t('about.projects.mlVision.title'),
+                                        content: t('about.projects.mlVision.items', { returnObjects: true }) as string[]
                                     }}
                                 />
                             </Paper>
@@ -271,7 +273,7 @@ const About = () => {
                 </TimelineSeparator>
                 <TimelineContent>
                     <Typography className={classes.title} variant={'h5'} component={'h1'}>
-                        Education history
+                        {t('about.educationHistory')}
                     </Typography>
                 </TimelineContent>
 
@@ -286,13 +288,13 @@ const About = () => {
                         <div className={classes.event}>
                             <h3>2015 - 2019</h3>
                         </div>
-                        <Typography className={classes.roleTitle}>Computer Science Student</Typography>
-                        <div>HCMUS - University of Science</div>
+                        <Typography className={classes.roleTitle}>{t('about.roles.computerScienceStudent')}</Typography>
+                        <div>{t('about.companies.hcmus')}</div>
                         <Paper className={classes.paperContent}>
                             <ProjectContentComponent
                                 projectContent={{
-                                    title: 'Bachelor of Computer Science',
-                                    content: ['GPA: 3.88 (Top 5%)', 'Advanced Program in Computer Science', 'IELTS Band 6.5', 'AWS Certified Solutions Architect - Associate', 'Japanese: Near N2 level']
+                                    title: t('about.projects.education.title'),
+                                    content: t('about.projects.education.items', { returnObjects: true }) as string[]
                                 }}
                             />
                         </Paper>
@@ -309,36 +311,36 @@ const About = () => {
                             component={'h2'}
                             gutterBottom
                             className={classes.title}
-                >Technical Skills</Typography>
+                >{t('about.technicalSkills')}</Typography>
                 <Paper className={classes.paperContent}>
                     <ProjectContentComponent
                         projectContent={{
-                            title: 'Cloud & Infrastructure',
-                            content: ['AWS (IoT Core, Kinesis, Lambda, S3, Glue, Athena, DynamoDB, Cognito, EC2, ECS, RDS)', 'Docker, Kubernetes']
+                            title: t('about.skills.cloudInfra.title'),
+                            content: t('about.skills.cloudInfra.items', { returnObjects: true }) as string[]
                         }}
                     />
                     <ProjectContentComponent
                         projectContent={{
-                            title: 'Backend',
-                            content: ['Node.js, Express.js, Python, RESTful API', 'PostgreSQL, Neo4j, MongoDB, Redis, TimescaleDB']
+                            title: t('about.skills.backend.title'),
+                            content: t('about.skills.backend.items', { returnObjects: true }) as string[]
                         }}
                     />
                     <ProjectContentComponent
                         projectContent={{
-                            title: 'Frontend & Mobile',
-                            content: ['ReactJS, TypeScript, Flutter, React Native', 'Swift/SwiftUI (iOS)']
+                            title: t('about.skills.frontend.title'),
+                            content: t('about.skills.frontend.items', { returnObjects: true }) as string[]
                         }}
                     />
                     <ProjectContentComponent
                         projectContent={{
-                            title: 'IoT & Robotics',
-                            content: ['AWS IoT, MQTT', 'Equipment Integration (Elevators, Auto-doors, Security Gates, Fire Alarms)', 'Robot Communication Protocols']
+                            title: t('about.skills.iot.title'),
+                            content: t('about.skills.iot.items', { returnObjects: true }) as string[]
                         }}
                     />
                     <ProjectContentComponent
                         projectContent={{
-                            title: 'Architecture',
-                            content: ['Domain Driven Design, MVVM, Microservices', 'System Design, Disaster Recovery Planning']
+                            title: t('about.skills.architecture.title'),
+                            content: t('about.skills.architecture.items', { returnObjects: true }) as string[]
                         }}
                     />
                 </Paper>
@@ -347,12 +349,12 @@ const About = () => {
                             gutterBottom
                             className={classes.title}
                             sx={{ marginTop: 3 }}
-                >Key Strengths</Typography>
+                >{t('about.keyStrengths')}</Typography>
                 <Paper className={classes.paperContent}>
                     <ProjectContentComponent
                         projectContent={{
                             title: '',
-                            content: ['Bridge Communication: Facilitating technical discussions between Japanese and Vietnamese teams', 'Technical Leadership: Leading distributed teams and mentoring junior developers', 'Problem Solving: Debugging complex distributed systems and designing scalable solutions', 'System Architecture: Designing cloud infrastructure and robot integration platforms']
+                            content: t('about.strengths.items', { returnObjects: true }) as string[]
                         }}
                     />
                 </Paper>
@@ -365,7 +367,7 @@ const About = () => {
                 <Face fontSize={'large'}/>
             </div>
             <h1>
-                RESUME
+                {t('about.title')}
             </h1>
         </div>
         <div className={classes.content}>
@@ -383,7 +385,7 @@ const About = () => {
             <Button href={downloadURL} download='cv' variant={'contained'} color="primary" size={'large'}
                     startIcon={<CloudDownloadOutlined/>}
             >
-                Download CV
+                {t('about.downloadCV')}
             </Button>
         </div>
     </div>);
