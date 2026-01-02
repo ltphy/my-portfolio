@@ -14,7 +14,7 @@ provider "aws" {
 
 provider "aws" {
   alias  = "us_east_1"
-  region = "us-east-1"  # Required for ACM certificate
+  region = "us-east-1"
 }
 
 # S3 Bucket for website hosting
@@ -89,7 +89,7 @@ resource "aws_cloudfront_distribution" "portfolio" {
   comment             = "Portfolio distribution for ${var.domain_name}"
   default_root_object = "index.html"
   aliases             = [var.domain_name, "www.${var.domain_name}"]
-  price_class         = "PriceClass_100"  # Use only NA and Europe edge locations (cheapest)
+  price_class         = "PriceClass_200" #Asian included
 
   origin {
     domain_name = aws_s3_bucket.portfolio.bucket_regional_domain_name
