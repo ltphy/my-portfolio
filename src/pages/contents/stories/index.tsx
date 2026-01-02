@@ -3,7 +3,7 @@ import {useThemeContext} from "../../../context/ThemeProvider/theme.context";
 import {fields} from "./stories.constants";
 import {typeSpeed} from "../../../constants/default_constants";
 import styles from './styles.module.scss';
-import {phy1, phy2, phy3, phy} from '../../../assets';
+import {phy1, phy2, phy3, phy, phy4} from '../../../assets';
 
 const images = [
     {
@@ -20,7 +20,7 @@ const images = [
     },
 ];
 
-const imageList = [phy1, phy, phy2, phy3];
+const imageList = [phy1, phy, phy2, phy3, phy4];
 
 const Stories = () => {
     //will render
